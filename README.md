@@ -28,7 +28,9 @@ De preferência seguir o layout abaixo para a criação da aplicação, o PSD se
 
 Na pasta `api/data.json` existe os dados iniciais que a aplicação deve ler.
 
-A partir daí para adicionar, remover e editar items deve-se fazer local sem guardar estado mesmo. Para esse desafio não é preciso persistir esses dados em nenhum lugar, nem modificar o arquivo `data.json`
+A partir daí para adicionar, remover e editar items deve-se fazer local no Javascript sem persistir estado.
+
+Para esse desafio não é necessário guardar as modificaçòes que o usuário vai fazer na aplicação.
 
 ---
 
