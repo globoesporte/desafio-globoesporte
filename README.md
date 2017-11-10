@@ -30,7 +30,7 @@ Na pasta `api/data.json` existe os dados iniciais que a aplicação deve ler.
 
 A partir daí para adicionar, remover e editar items deve-se fazer local no Javascript sem persistir estado.
 
-Para esse desafio não é necessário guardar as modificaçòes que o usuário vai fazer na aplicação.
+Para esse desafio não é necessário guardar as modificações que o usuário vai fazer na aplicação.
 
 ---
 
