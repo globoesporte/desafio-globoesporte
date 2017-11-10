@@ -2,6 +2,8 @@
 
 Desenvolva uma aplicação de tarefas (todo list) utilizando React.
 
+Crie um fork desse projeto, e quando concluído crie um pull request do seu fork para esse repositório.
+
 ---
 
 ## Features
