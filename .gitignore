@@ -11,6 +11,9 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 
+.idea
+.idea/
+
 ### OSX ###
 *.DS_Store
 .AppleDouble
