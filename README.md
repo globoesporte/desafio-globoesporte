@@ -4,7 +4,7 @@ Desenvolva uma aplicação de tarefas (todo list) utilizando React.
 
 ---
 
-## Features da aplicação
+## Features
 
 O usuário deve poder:
 
@@ -16,11 +16,19 @@ O usuário deve poder:
 
 ---
 
-## Layout a ser seguido
+## Layout
 
 De preferência seguir o layout abaixo para a criação da aplicação, o PSD se encontra dentro da pasta `layout``:
 
 ![layout](./layout/layout.jpg)
+
+---
+
+## Dados
+
+Na pasta `api/data.json` existe os dados iniciais que a aplicação deve ler.
+
+A partir daí para adicionar, remover e editar items deve-se fazer local sem guardar estado mesmo. Para esse desafio não é preciso persistir esses dados em nenhum lugar, nem modificar o arquivo `data.json`
 
 ---
 
