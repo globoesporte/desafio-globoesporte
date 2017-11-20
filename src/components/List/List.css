@@ -1,27 +1,50 @@
 .c-list {
   list-style: none;
-  max-width: 394px;
   padding: 0;
-  width: 100%;
+  width: 394px;
+  margin: 30px auto;
+  background-color: #fff;
+  box-shadow: rgba(155, 155, 155, 0.5) 0px 0px 5px; 
 }
 
 .c-list li {
   display: flex;
   height: 67px;
-  padding-left: 20px;
-  width: 100%
+  padding-left: 40px;
 }
 
-.c-list li:hover, .c-list .c-list__text:hover {
+.c-list li:hover, .c-list .c-list__text:hover, .c-list li:hover .c-list__text {
   background-color: #eaeaea;
+}
+
+.c-list li:hover .c-list__remove, .c-list .c-list__text:hover .c-list__remove {
+  display: inherit
+}
+
+.c-list__remove {
+  display: none
 }
 
 .c-list li .c-list__text{
   border: none;
   color: rgb(54,59,70);
   font-size: 17px;
-  font-family: "OpenSans-Semibold";
+  font-family: "Open Sans";
   font-weight: bold;
   outline: none;
   width: 275px;
+}
+
+.c-list__button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 40px;
+}
+
+.c-list__text-active {
+  color: #b5b8c3 !important;
 }

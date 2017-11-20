@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './List.css';
+
+import Element from './Element';
 
 export default props => {
   const renderList = () => {
@@ -10,34 +12,45 @@ export default props => {
       list = listTask.map(function(elem, index) {
         if (elem.status === 'todo') {
           return (
-            <tr key={index} id={index}>
-              <td><input type="text" value={props.listTask[index].text} onChange={props.handlerTextList}/></td>
-              <td><button>{elem.status}</button></td>
-              <td><button value={index} onClick={props.remove}>Deletar</button></td>
-            </tr>
-          )          
+            <Element
+              key={index}
+              index={index}
+              listTask={props.listTask}
+              handlerTextList={props.handlerTextList}
+              onClickStatus={props.onClickStatus}
+              remove={props.remove} 
+            />
+          )
         }
+        return false        
       });
     } else if (filter === 'done') {
       list = listTask.map(function(elem, index) {
         if (elem.status === 'done') {
           return (
-            <tr key={index} id={index}>
-              <td><input type="text" value={props.listTask[index].text} onChange={props.handlerTextList}/></td>
-              <td><button>{elem.status}</button></td>
-              <td><button value={index} onClick={props.remove}>Deletar</button></td>
-            </tr>
+            <Element 
+              key={index}            
+              index={index}
+              listTask={props.listTask}
+              handlerTextList={props.handlerTextList}
+              onClickStatus={props.onClickStatus}
+              remove={props.remove} 
+            />
           )
         }
+        return false
       });
     } else {
       list = listTask.map(function(elem, index) {
         return (
-          <li key={index}>
-            <input type="text" className="c-list__text" value={props.listTask[index].text} onChange={props.handlerTextList} id={index}/>
-            <button value={props.listTask[index].status} onClick={props.onClickStatus} id={index}>{props.listTask[index].status}</button>
-            <button value={index} onClick={props.remove} id={index}>Deletar</button>
-          </li>
+          <Element 
+            key={index}          
+            index={index}
+            listTask={props.listTask}
+            handlerTextList={props.handlerTextList}
+            onClickStatus={props.onClickStatus}
+            remove={props.remove} 
+          />
         )
       });
     }

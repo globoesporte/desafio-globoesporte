@@ -1,0 +1,32 @@
+.c-filter {
+  width: 394px;
+  margin: 0 auto;
+}
+
+.c-filter label {
+  color: #2c8002;
+  font-family: 'Open Sans';
+  font-size: 12px;
+}
+
+.c-filter button {
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #2c8002;  
+  cursor: pointer;  
+  font-family: 'Open Sans';
+  font-size: 12px;
+  padding: 3px 6px;
+  outline: none;
+  margin: 2px;
+}
+
+.c-filter__options {
+  float: right;
+}
+
+.is-active {
+  background-color: #2c8002 !important;
+  color: #fff !important;
+}
