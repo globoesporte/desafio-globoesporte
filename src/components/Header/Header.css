@@ -1,0 +1,45 @@
+.c-header {
+  background-color: #2c8002;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.c-header__time {
+  opacity: 0.8;
+  float: right;
+  padding: 10px 30px;
+}
+
+.c-header__number {
+  color: #fff;
+  display: inline-block;
+  margin: 0 10px; 
+  font-size: 45px;
+  font-family: 'Open Sans'
+}
+
+.c-header__year, .c-header__month {
+  color: #fff;  
+  display: inline-block;
+  font-size: 13px;
+  font-family: 'Open Sans'; 
+  margin: 0 2px;
+  padding: 0
+}
+
+.c-header__day {
+  color: #fff;  
+  font-size: 20px;
+  font-family: 'Open Sans'; 
+  padding: 0;
+  margin: 0;
+}
+
+.c-header__info {
+  display: inline-block
+} 
+
+.c-header__logo {
+  margin-top: 21px;
+  margin-left: 45%;  
+}  

@@ -1,10 +1,11 @@
 .c-text {
   border: 0;
   border-bottom: 1px solid #565a68;
+  background-color: transparent;
   color: #565a68;
   font-family: 'Open Sans';
   font-size: 22px;
   padding: 11px;
-  max-width: 487px;
-  width: 100%;
+  width: 487px;
+  outline: none;
 }
