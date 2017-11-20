@@ -1,0 +1,27 @@
+.c-list {
+  list-style: none;
+  max-width: 394px;
+  padding: 0;
+  width: 100%;
+}
+
+.c-list li {
+  display: flex;
+  height: 67px;
+  padding-left: 20px;
+  width: 100%
+}
+
+.c-list li:hover, .c-list .c-list__text:hover {
+  background-color: #eaeaea;
+}
+
+.c-list li .c-list__text{
+  border: none;
+  color: rgb(54,59,70);
+  font-size: 17px;
+  font-family: "OpenSans-Semibold";
+  font-weight: bold;
+  outline: none;
+  width: 275px;
+}
