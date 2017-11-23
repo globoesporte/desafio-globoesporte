@@ -40,7 +40,6 @@ Temporary Items
 
 node_modules
 npm-debug.log
-dist
 *.min.js
 coverage
 .nyc_output
@@ -98,3 +97,4 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
+
