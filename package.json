@@ -8,7 +8,8 @@
     "server": "live-server --open=./dist --watch=./source --wait=1500 --host=localhost",
     "build": "webpack -p",
     "watch": "npm run dev -- --watch",
-    "start": "concurrently --kill-others \"npm run watch\" \"npm run server\" --success first"
+    "start": "concurrently --kill-others \"npm run watch\" \"npm run server\" --success first",
+    "test": "jest"
   },
   "keywords": [
     "react",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.21.0",
+    "babel-jest": "^22.1.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
@@ -37,6 +39,8 @@
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
     "img-loader": "^2.0.0",
+    "jest": "^22.1.2",
+    "regenerator-runtime": "^0.11.1",
     "style-loader": "^0.19.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
