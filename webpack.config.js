@@ -21,7 +21,7 @@ const cleanDist = new CleanWebpackPlugin(['dist'], {
 });
 const fonts = new GoogleFontsPlugin({
   fonts: [
-      { family: "Open Sans", variants: [ "400", "700" ] }
+      { family: "Open Sans", variants: [ "400", "500", "600" ] }
   ],
   local: false
 });

@@ -2,14 +2,23 @@
 
 // @import './core/x-ray.styl'
 @import './core/variables.styl'
+@import './core/mixins.styl'
 @import './core/typography.styl'
 @import './core/helpers.styl'
 
-@import './components/nav.styl'
+@import './components/app-container.styl'
+@import './components/header.styl'
 @import './components/new-todo-input.styl'
 @import './components/todos.styl'
 
 
 body 
   font-family 'Open Sans', sans-serif
-  background-color $light-gray 
+  background-color #111
+
+#app
+  display flex
+  min-height 100vh
+  justify-content center
+  align-items center
+  wrapper(600px, 10px)

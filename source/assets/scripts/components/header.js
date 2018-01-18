@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class TopBar extends Component {
   render() {
     return(
-      <header className="nav x">
-        <h1 className="nav__title x no-margin">ge</h1>
+      <header className="header x">
+        <h2 className="header__title x no-margin">GE</h2>
       </header>
     );
   }
