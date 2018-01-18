@@ -1,0 +1,32 @@
+.todos
+  background-color #fff
+  margin 0 5rem
+
+  &__list
+    padding-left 0
+    list-style-type none
+
+    &__item
+      padding 1em 5em
+      display flex
+      justify-content space-between
+      align-items center
+      &__text
+        color $blue-dark
+        order 1
+        flex 0 0 80%
+      &__checkbox
+        order 2
+        flex 0 0 10%
+        & + .todos__list__item__text
+          color $blue-dark  
+        &:checked + .todos__list__item__text
+          color $blue-gray-light
+
+      &__delete
+        flex 0 0 10%
+        border none 
+        background-color transparent
+        color $red
+        order 3
+
