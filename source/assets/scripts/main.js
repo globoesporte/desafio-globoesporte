@@ -5,23 +5,31 @@ import data from '../../../api/data.json';
 import uuidv4 from 'uuid/v4';
 
 class App extends Component {
+
+  state = {
+    todos: []
+  };
+
+  componentDidMount() {
+    this.setState({
+      todos: data
+    });
+  }
+
   render() {
-
-    const todos = data.slice();
-
-    const listaDeItens = todos.map(todo => {
+    const listaDeItens = this.state.todos.map(todo => {
       if(true) {
         return(
           <li className="todos__list__item x" key={uuidv4()}>
-            <input className="todos__list__item__checkbox x" type="checkbox" name={uuidv4()} /> 
-            <label className="todos__list__item__text x" htmlFor={uuidv4()}>{todo.text}</label> 
+            <input className="todos__list__item__checkbox x" type="checkbox"/> 
+            <label className="todos__list__item__text x">{todo.text}</label> 
             <button className="todos__list__item__delete x">x</button>
           </li>
         );
       } else {
         return(
           <li className="todos__list__item x" key={uuidv4()}>
-            <input className="todos__list__item__checkbox x" type="checkbox" name={uuidv4()} /> 
+            <input className="todos__list__item__checkbox x" type="checkbox"/> 
             <input className="todos__list__item__text x" type="text" placeholder={todo.text}/> 
             <button className="todos__list__item__delete x">x</button>
           </li>
