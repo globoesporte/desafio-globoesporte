@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM  from "react-dom";
-import {Header} from './components';
+import {Header, TodosList, Todo, TodoEdit, Input} from './components';
 import data from '../../../api/data.json';
 import uuidv4 from 'uuid/v4';
 
@@ -42,41 +42,19 @@ class App extends Component {
   }
 
   render() {
-    const listaDeItens = this.state.todos.map(todo => {
-      if(true) {
-        return(
-          <li className="todos__list__item x" key={todo.id}>
-            <input className="todos__list__item__checkbox x" type="checkbox"/> 
-            <label className="todos__list__item__text x">{todo.text}</label> 
-            <button className="todos__list__item__delete x">x</button>
-          </li>
-        );
-      } else {
-        return(
-          <li className="todos__list__item x" key={todo.id}>
-            <input className="todos__list__item__checkbox x" type="checkbox"/> 
-            <input className="todos__list__item__text x" type="text" placeholder={todo.text}/> 
-            <button className="todos__list__item__delete x">x</button>
-          </li>
-        );
-      }
-    });
-
-    return(
+    const listaDeItens = this.state.todos.map(todo => (
+        todo.isBeingEdit 
+        ? <TodoEdit key={todo.id} text={todo.text} /> 
+        : <Todo key={todo.id} text={todo.text} />
+    ));
+    return (
       <main className="x app-container">
         <Header />
-        <input 
-          className="new-todo-input x" 
-          type="text" 
-          placeholder="Escreva aqui uma nova tarefa..." 
-          value={this.state.newTodo} 
+        <Input 
+          value={this.state.newTodo}
           onChange={this.handleInputChange}
-          onKeyDown={this.handleInputEnter}/>
-        <section className="todos x">
-          <ul className="todos__list x">
-            {listaDeItens}
-          </ul>
-        </section>
+          onKeyDown={this.handleInputEnter} />
+        <TodosList todos={listaDeItens}/>
       </main>
     );
   }
