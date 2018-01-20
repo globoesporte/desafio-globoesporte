@@ -24,7 +24,7 @@ class App extends Component {
 
   handleInputChange = (e) => this.setState({newTodo: e.target.value});
 
-  handleInputEnter = (e) => {
+  addTodo = (e) => {
     if (e.keyCode == 13 && e.target.value) {
       const newId = uuidv4();
       const newTodo = {
@@ -41,11 +41,21 @@ class App extends Component {
     }
   }
 
+  deleteTodo = (id) => {
+    const updateTodos = [...this.state.todos];
+    updateTodos.forEach((todo, i) => {
+      if(todo.id === id) {
+        updateTodos.splice(i, 1);
+        this.setState({todos: updateTodos});
+      }
+    });
+  }
+
   render() {
     const listaDeItens = this.state.todos.map(todo => (
         todo.isBeingEdit 
         ? <TodoEdit key={todo.id} text={todo.text} /> 
-        : <Todo key={todo.id} text={todo.text} />
+        : <Todo key={todo.id} id={todo.id} text={todo.text} deleteTodo={this.deleteTodo} />
     ));
     return (
       <main className="x app-container">
@@ -53,8 +63,9 @@ class App extends Component {
         <Input 
           value={this.state.newTodo}
           onChange={this.handleInputChange}
-          onKeyDown={this.handleInputEnter} />
-        <TodosList todos={listaDeItens}/>
+          onKeyDown={this.addTodo} 
+        />
+        <TodosList todos={listaDeItens} />
       </main>
     );
   }
