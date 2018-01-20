@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM  from "react-dom";
-import Header from './components/header';
+import {Header} from './components';
 import data from '../../../api/data.json';
 import uuidv4 from 'uuid/v4';
 
