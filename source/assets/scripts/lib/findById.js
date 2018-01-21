@@ -1,0 +1,1 @@
+export const findById = (id, list) => list.find((item) => id === item.id);

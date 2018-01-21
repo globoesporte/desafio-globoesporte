@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM  from "react-dom";
-import {modifiedData, addTodo, deleteTodo, createNewTodo} from './lib';
+import {modifiedData, addTodo, deleteTodo, createNewTodo, findById, toogleTodo, updateTodo} from './lib';
 import {Header, TodosList, Todo, TodoEdit, Input} from './components';
 import data from '../../../api/data.json';
 import uuidv4 from 'uuid/v4';
@@ -36,11 +36,26 @@ class App extends Component {
     this.setState({todos: updateTodos});
   }
 
+  handleStatusChange = (id) => {
+    const todo = findById(id, this.state.todos);
+    const toogle = toogleTodo(todo);
+    const updatedTodos = updateTodo(this.state.todos, toogle);
+    this.setState({
+      todos: updatedTodos
+    });
+  }
+
   render() {
     const listaDeItens = this.state.todos.map(todo => (
         todo.isBeingEdit 
         ? <TodoEdit key={todo.id} text={todo.text} /> 
-        : <Todo key={todo.id} id={todo.id} text={todo.text} deleteTodo={this.handleDeleteTodo} />
+        : <Todo 
+            key={todo.id} 
+            id={todo.id} 
+            text={todo.text} 
+            deleteTodo={this.handleDeleteTodo} 
+            toogle={this.handleStatusChange} 
+            status={todo.status} />
     ));
     return (
       <main className="x app-container">
