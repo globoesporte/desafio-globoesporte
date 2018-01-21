@@ -1,0 +1,1 @@
+export const addTodo = (list, todo) => list.concat(todo);

@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM  from "react-dom";
+import {modifiedData, addTodo, deleteTodo, createNewTodo} from './lib';
 import {Header, TodosList, Todo, TodoEdit, Input} from './components';
 import data from '../../../api/data.json';
 import uuidv4 from 'uuid/v4';
-
-const modifiedData = data.map(todo => Object.assign({}, todo, {
-  id: uuidv4(),
-  isBeingEdit: false
-}));
 
 class App extends Component {
 
@@ -18,22 +14,16 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      todos: modifiedData
+      todos: modifiedData(data)
     });
   }
 
   handleInputChange = (e) => this.setState({newTodo: e.target.value});
 
-  addTodo = (e) => {
+  handleInputSubmit = (e) => {
     if (e.keyCode == 13 && e.target.value) {
-      const newId = uuidv4();
-      const newTodo = {
-        text: e.target.value,
-        status: 'todo',
-        id: newId,
-        isBeingEdit: false
-      };
-      const updateTodos = this.state.todos.concat(newTodo);
+      const newTodo = createNewTodo(e.target.value);
+      const updateTodos = addTodo(this.state.todos, newTodo);
       this.setState({
         todos: updateTodos,
         newTodo: ''
@@ -41,21 +31,16 @@ class App extends Component {
     }
   }
 
-  deleteTodo = (id) => {
-    const updateTodos = [...this.state.todos];
-    updateTodos.forEach((todo, i) => {
-      if(todo.id === id) {
-        updateTodos.splice(i, 1);
-        this.setState({todos: updateTodos});
-      }
-    });
+  handleDeleteTodo = (id) => {
+    const updateTodos = deleteTodo(this.state.todos, id);
+    this.setState({todos: updateTodos});
   }
 
   render() {
     const listaDeItens = this.state.todos.map(todo => (
         todo.isBeingEdit 
         ? <TodoEdit key={todo.id} text={todo.text} /> 
-        : <Todo key={todo.id} id={todo.id} text={todo.text} deleteTodo={this.deleteTodo} />
+        : <Todo key={todo.id} id={todo.id} text={todo.text} deleteTodo={this.handleDeleteTodo} />
     ));
     return (
       <main className="x app-container">
@@ -63,7 +48,7 @@ class App extends Component {
         <Input 
           value={this.state.newTodo}
           onChange={this.handleInputChange}
-          onKeyDown={this.addTodo} 
+          onKeyDown={this.handleInputSubmit} 
         />
         <TodosList todos={listaDeItens} />
       </main>

@@ -9,7 +9,7 @@
     "build": "webpack -p",
     "watch": "npm run dev -- --watch",
     "start": "concurrently --kill-others \"npm run watch\" \"npm run server\" --success first",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "keywords": [
     "react",
