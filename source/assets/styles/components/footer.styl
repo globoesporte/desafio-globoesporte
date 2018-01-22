@@ -1,13 +1,30 @@
 .footer
   display flex
-  justify-content space-around
+  justify-content space-between
+  margin-bottom 3.5em
+  wrapper(296px, 0)
 
-  // &__text
+  &__text
+    font-size 0.55rem
+    color $green
   
   &__nav
+    margin-right -0.3em
 
     &__link
-      padding 0 .5em
+      padding 0.28em 0.75em
+      margin-left 0.5em
+      font-size 0.55rem
+      text-decoration none
+      color $green
+      border-radius 4px
+      transition 200ms all ease-in-out
+
+
+      &:hover
+        color white 
+        background-color $green
+
 
 .active
   font-weight bold

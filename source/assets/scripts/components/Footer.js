@@ -17,7 +17,7 @@ export const Footer = (props) => {
       <nav className="x footer__nav">
         <Link to="/">Todos</Link>
         <Link to="/feitos">Feitos</Link>
-        <Link to="/fazer">A Fazer</Link>
+        <Link to="/fazer">A fazer</Link>
       </nav>
     </footer>
   );
