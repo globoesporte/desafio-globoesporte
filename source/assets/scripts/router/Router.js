@@ -31,6 +31,14 @@ export class Router extends Component {
     }
   }
 
+  componentDidMount() {
+    window.onpopstate = () => {
+      this.setState({
+        route: getCurrentPath()
+      })
+    }
+  }
+
   render() {
     return(
       <React.Fragment>{this.props.children}</React.Fragment>
