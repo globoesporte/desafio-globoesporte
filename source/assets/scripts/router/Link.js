@@ -15,8 +15,10 @@ export class Link extends Component {
   }
   
   render() {
+    const activeClass = this.context.route === this.props.to ? 'active' : '';
+    const classNames = `x footer__nav__link ${activeClass}`
     return (
-      <a href="#" onClick={this.handleClick} className="x footer__nav__link">{this.props.children}</a>
+      <a href="#" onClick={this.handleClick} className={classNames}>{this.props.children}</a>
     );
   }
 }
