@@ -6,7 +6,7 @@ export const Footer = (props) => {
   const fazer = props.remainingTodos > 1 ? 'Faltam' : 'Falta';
   const tarefa = props.remainingTodos > 1 ? ' tarefas' : 'tarefa';
   const remaining = props.remainingTodos === 0 
-    ? <span className="x footer__text">Nada pra fazer?</span>
+    ? <span className="x footer__text">Sem tarefas</span>
     : <span className="x footer__text">
         {fazer} {props.remainingTodos} {tarefa}
       </span>

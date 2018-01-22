@@ -33,7 +33,10 @@ class App extends Component {
     });
   }
 
-  handleInputChange = (e) => this.setState({newTodo: e.target.value});
+  handleInputChange = (e) => this.setState({
+    newTodo: e.target.value,
+    error: ''
+  });
 
   handleInputSubmit = (e) => {
     if (e.keyCode == 13 && e.target.value) {
@@ -43,6 +46,15 @@ class App extends Component {
         todos: updateTodos,
         newTodo: ''
       });
+    }
+  }
+
+  handleEmptySubmit = (e) => {
+    
+    if (e.keyCode == 13) {
+      this.setState({
+        error: 'Você precisa fornecer uma tarefa'
+      })
     }
   }
 
@@ -64,6 +76,7 @@ class App extends Component {
 
     const displayTodos = filterTodos(this.state.todos, this.context.route);
     const remainingTodos = filterTodos(this.state.todos, '/fazer').length;
+    const validInput = this.state.newTodo ? this.handleInputSubmit : this.handleEmptySubmit;
 
     return (
       <main className="x app-container">
@@ -71,8 +84,9 @@ class App extends Component {
         <Input 
           value={this.state.newTodo}
           onChange={this.handleInputChange}
-          onKeyDown={this.handleInputSubmit} 
+          onKeyDown={validInput} 
         />
+        {this.state.error && <span className="error x">{this.state.error}</span>}
         <TodosList 
           todos={displayTodos}         
           deleteTodo={this.handleDeleteTodo} 
