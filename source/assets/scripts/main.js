@@ -63,6 +63,7 @@ class App extends Component {
   render() {
 
     const displayTodos = filterTodos(this.state.todos, this.context.route);
+    const remainingTodos = filterTodos(this.state.todos, '/fazer').length;
 
     return (
       <main className="x app-container">
@@ -76,7 +77,7 @@ class App extends Component {
           todos={displayTodos}         
           deleteTodo={this.handleDeleteTodo} 
           toogle={this.handleStatusChange} />
-        <Footer />
+        <Footer remainingTodos={remainingTodos} />
       </main>
     );
   }
