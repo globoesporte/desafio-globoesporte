@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 import ReactDOM  from "react-dom";
-import {modifiedData, addTodo, deleteTodo, createNewTodo, findById, toogleTodo, updateTodo} from './lib';
+import {
+  modifiedData, 
+  addTodo, 
+  deleteTodo, 
+  createNewTodo, 
+  findById, 
+  toogleTodo, 
+  updateTodo, 
+  filterTodos } from './lib';
 import {Header, TodosList, Todo, TodoEdit, Input, Footer} from './components';
 import {Router} from './router';
 import data from '../../../api/data.json';
 import uuidv4 from 'uuid/v4';
+import PropTypes from 'prop-types';
+
 
 class App extends Component {
+
+  static contextTypes = {
+    route: PropTypes.string,
+  }
 
   state = {
     todos: [],
@@ -47,17 +61,9 @@ class App extends Component {
   }
 
   render() {
-    const listaDeItens = this.state.todos.map(todo => (
-        todo.isBeingEdit 
-        ? <TodoEdit key={todo.id} text={todo.text} /> 
-        : <Todo 
-            key={todo.id} 
-            id={todo.id} 
-            text={todo.text} 
-            deleteTodo={this.handleDeleteTodo} 
-            toogle={this.handleStatusChange} 
-            status={todo.status} />
-    ));
+
+    const displayTodos = filterTodos(this.state.todos, this.context.route);
+
     return (
       <main className="x app-container">
         <Header />
@@ -66,7 +72,10 @@ class App extends Component {
           onChange={this.handleInputChange}
           onKeyDown={this.handleInputSubmit} 
         />
-        <TodosList todos={listaDeItens} />
+        <TodosList 
+          todos={displayTodos}         
+          deleteTodo={this.handleDeleteTodo} 
+          toogle={this.handleStatusChange} />
         <Footer />
       </main>
     );

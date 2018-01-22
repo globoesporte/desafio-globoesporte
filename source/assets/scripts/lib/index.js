@@ -5,3 +5,4 @@ export {modifiedData} from './modifiedData';
 export {findById} from './findById';
 export {toogleTodo} from './toogleTodo';
 export {updateTodo} from './updateTodo';
+export {filterTodos} from './filterTodos';
