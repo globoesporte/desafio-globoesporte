@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM  from "react-dom";
 import {modifiedData, addTodo, deleteTodo, createNewTodo, findById, toogleTodo, updateTodo} from './lib';
-import {Header, TodosList, Todo, TodoEdit, Input} from './components';
+import {Header, TodosList, Todo, TodoEdit, Input, Footer} from './components';
+import {Router} from './router';
 import data from '../../../api/data.json';
 import uuidv4 from 'uuid/v4';
 
@@ -66,13 +67,14 @@ class App extends Component {
           onKeyDown={this.handleInputSubmit} 
         />
         <TodosList todos={listaDeItens} />
+        <Footer />
       </main>
     );
   }
 } 
 
 ReactDOM.render(
-  <App />,
+  <Router ><App /></Router >,
   document.getElementById("app")
 );
 

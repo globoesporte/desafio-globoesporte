@@ -21,6 +21,7 @@
     "google-fonts-webpack-plugin": "^0.4.4",
     "name-all-modules-plugin": "^1.0.1",
     "normalize-styl": "^4.1.1",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "uuid": "^3.2.1"
