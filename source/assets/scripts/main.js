@@ -98,10 +98,6 @@ class App extends Component {
     });
   }
 
-  handleBlur = (e) => {
-    console.log('ola')
-  }
-
   render() {
 
     const displayTodos = filterTodos(this.state.todos, this.context.route);
