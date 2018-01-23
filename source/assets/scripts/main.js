@@ -118,7 +118,7 @@ class App extends Component {
           deleteTodo={this.handleDeleteTodo} 
           toogleEditTodo={this.handleToogleEditTodo} 
           editText={this.state.editText}
-          toogle={this.handleStatusChange}
+          toogleStatus={this.handleStatusChange}
           editInputChange={this.handleEditInputChange}
           confirmButtonSubmit={this.handleConfirmButtonSubmit} />
         <Footer remainingTodos={remainingTodos} />

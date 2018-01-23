@@ -18,7 +18,7 @@ export const TodosList = (props) => {
         id={todo.id} 
         text={todo.text} 
         deleteTodo={props.deleteTodo} 
-        toogle={props.toogle} 
+        toogleStatus={props.toogleStatus} 
         toogleEditTodo={props.toogleEditTodo}
         status={todo.status} />
   ));
