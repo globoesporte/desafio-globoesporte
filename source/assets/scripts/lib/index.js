@@ -6,3 +6,5 @@ export {findById} from './findById';
 export {toogleTodo} from './toogleTodo';
 export {updateTodo} from './updateTodo';
 export {filterTodos} from './filterTodos';
+export {toogleEditTodo} from './toogleEditTodo';
+export {changeTextTodo} from './changeTextTodo';

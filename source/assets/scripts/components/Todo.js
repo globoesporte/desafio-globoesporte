@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Todo = (props) => (
-  <li className="todos__list__item x">
+  <li className="todos__list__item x" onDoubleClick={() => props.toogleEditTodo(props.id)}>
     <input 
       className="todos__list__item__checkbox x" 
       type="checkbox" 
