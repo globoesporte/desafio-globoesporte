@@ -47,14 +47,13 @@ class App extends Component {
   });
 
   handleInputSubmit = (e) => {
-    if (e.keyCode == 13 && e.target.value) {
-      const newTodo = createNewTodo(e.target.value);
-      const updateTodos = addTodo(this.state.todos, newTodo);
-      this.setState({
-        todos: updateTodos,
-        newTodo: ''
-      });
-    }
+    e.preventDefault();
+    const newTodo = createNewTodo(this.state.newTodo);
+    const updateTodos = addTodo(this.state.todos, newTodo);
+    this.setState({
+      todos: updateTodos,
+      newTodo: ''
+    });
   }
 
   handleConfirmButtonSubmit = (id) => {
@@ -68,12 +67,10 @@ class App extends Component {
   }
 
   handleEmptySubmit = (e) => {
-
-    if (e.keyCode == 13) {
-      this.setState({
-        error: 'Você precisa fornecer uma tarefa'
-      })
-    }
+    e.preventDefault();
+    this.setState({
+      error: 'Você precisa fornecer uma tarefa'
+    })
   }
 
   handleDeleteTodo = (id) => {
@@ -113,7 +110,7 @@ class App extends Component {
         <Input 
           value={this.state.newTodo}
           onChange={this.handleInputChange}
-          onKeyDown={validInput} 
+          onSubmit={validInput} 
         />
         {errorInputMessage}
         <TodosList 
