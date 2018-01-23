@@ -1,12 +1,40 @@
 .header
   background-color $green-2
-  padding 0.63em 0
   text-align center;
   display flex
   justify-content center
-  align-items center
   color white
   width 100%
+  position relative
 
   &__title
     color $light-green
+    margin 0.31em 0
+
+  &__time
+    background-color $green
+    position absolute 
+    right 0
+    height 100%
+    width 20.5%
+    display flex
+    justify-content center
+    align-items center
+    color $light-green
+
+    &__day
+      font-size ($text-size * 2.1)
+
+    &__more-info
+      display flex
+      flex-direction column
+      justify-content flex-start
+      align-items flex-start
+      margin-left 0.5em
+      
+      &__day-week
+        font-size ($text-size * 0.9)
+      
+      &__month-year
+        font-size ($text-size * 0.6)
+        
