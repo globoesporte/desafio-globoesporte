@@ -10,13 +10,75 @@
     margin 0
 
     &__item
-      padding 0.78em 0.3em 0.78em 2.1em
+      padding 0.85em 0.3em 0.85em 2.1em
       display flex
       justify-content space-between
       align-items center
+      position relative
       &:hover
         background-color $light-gray
+
+      &:hover > &__delete
+        transform scale(0.5)
       
+      &__text
+        color $blue-dark
+        order 1
+        flex 0 0 65%
+        font-weight 600
+
+      &__label
+        border 6px solid $blue-gray-light
+        border-radius 50%
+        cursor pointer
+        width 1em
+        height 1em
+        right 2.1em
+        top 1em
+        position: absolute
+        transition all 200ms ease-in-out
+        margin-right 0.5em
+
+        &:after
+          background-image url(./../img/check-mark.svg)
+          background-size cover
+          content: ""
+          width 1.2em
+          height 1.2em
+          top -0.1em
+          right -0.1em
+          transform scale(0)
+          transition all 200ms ease-in-out
+          position absolute
+
+      &__checkbox
+        order 2
+        flex 0 0 15%
+        visibility hidden
+        z-index 2
+
+        &:checked + .todos__list__item__label
+          border: 6px solid transparent;
+
+        &:checked + .todos__list__item__label:after
+          transform scale(1)
+
+        & ~ .todos__list__item__text
+          color $blue-dark  
+
+        &:checked ~ .todos__list__item__text
+          color $blue-gray-light
+
+      &__delete
+        flex 0 0 15%
+        border 1px solid transparent
+        background-color transparent
+        color $red
+        order 3
+        transform scale(0)
+        transition transform 200ms ease-in-out
+        margin-left 1.2em
+
       &__edit
         padding 0.95em 2.1em
         background-color $blue-dark
@@ -37,25 +99,3 @@
             color white
             outline none
             background-color $blue-dark
-
-      &__text
-        color $blue-dark
-        order 1
-        flex 0 0 80%
-        font-weight 600
-
-      &__checkbox
-        order 2
-        flex 0 0 10%
-        & + .todos__list__item__text
-          color $blue-dark  
-        &:checked + .todos__list__item__text
-          color $blue-gray-light
-
-      &__delete
-        flex 0 0 10%
-        border 1px solid transparent
-        background-color transparent
-        color $red
-        order 3
-
