@@ -12,7 +12,8 @@ export const TodosList = (props) => {
         editText={props.editText}
         toogleEditTodo={props.toogleEditTodo}
         editInputChange={props.editInputChange}
-        confirmButtonSubmit={props.confirmButtonSubmit} /> 
+        handleBlur={props.handleBlur}
+        editSubmit={props.editSubmit} /> 
     : <Todo 
         key={todo.id} 
         id={todo.id} 

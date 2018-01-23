@@ -56,12 +56,13 @@ class App extends Component {
     });
   }
 
-  handleConfirmButtonSubmit = (id) => {
+  handleEditSubmit = (id) => {
     const todo = findById(id, this.state.todos);
-    const newTextTodo = changeTextTodo(this.state.editText, todo);
-    const x = updateTodo(this.state.todos, newTextTodo);
+    const text = this.state.editText || todo.text;
+    const newTextTodo = changeTextTodo(text, todo);
+    const updateTodos = updateTodo(this.state.todos, newTextTodo);
     this.setState({
-      todos: x,
+      todos: updateTodos,
       editText: ''
     });
   }
@@ -97,6 +98,10 @@ class App extends Component {
     });
   }
 
+  handleBlur = (e) => {
+    console.log('ola')
+  }
+
   render() {
 
     const displayTodos = filterTodos(this.state.todos, this.context.route);
@@ -120,7 +125,8 @@ class App extends Component {
           editText={this.state.editText}
           toogleStatus={this.handleStatusChange}
           editInputChange={this.handleEditInputChange}
-          confirmButtonSubmit={this.handleConfirmButtonSubmit} />
+          editSubmit={this.handleEditSubmit}
+          handleBlur={this.handleBlur} />
         <Footer remainingTodos={remainingTodos} />
       </main>
     );
