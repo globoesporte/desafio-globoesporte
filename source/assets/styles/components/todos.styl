@@ -19,48 +19,50 @@
       
       &__edit
         padding 0.78em 2.1em 0.78em 2.1em
-        display flex
-        justify-content space-around
-        align-items center
-        flex-wrap wrap
         border 1px solid $blue-gray-light  
         background-color white
 
-        &__input
-          flex 0 0 100%
-          font-size 0.8em
-          padding 0.2em 0 0.2em 0.5em
-          margin-bottom 1em
-          border-width 0 0 1px 0
-          border-bottom-style solid
-          border-bottom-color $medium-gray
-          color $blue-dark 
+        &__form
+          display flex
+          justify-content space-around
+          align-items center
+          flex-wrap wrap
 
-        &__confirm
-          padding 0.28em 0.75em
-          font-size 0.55rem
-          border-radius 4px
-          color white 
-          background-color $green
-          border none
-          cursor pointer
+          &__input
+            flex 0 0 100%
+            font-size 0.8em
+            padding 0.2em 0 0.2em 0.5em
+            margin-bottom 1em
+            border-width 0 0 1px 0
+            border-bottom-style solid
+            border-bottom-color $medium-gray
+            color $blue-dark 
 
-          &__disable
+          &__confirm
             padding 0.28em 0.75em
             font-size 0.55rem
             border-radius 4px
             color white 
-            background-color $medium-gray
+            background-color $green
             border none
+            cursor pointer
 
-        &__cancel
-          padding 0.28em 0.75em
-          font-size 0.55rem
-          border-radius 4px
-          color white 
-          background-color $red
-          border none
-          cursor pointer
+            &__disable
+              padding 0.28em 0.75em
+              font-size 0.55rem
+              border-radius 4px
+              color white 
+              background-color $medium-gray
+              border none
+
+          &__cancel
+            padding 0.28em 0.75em
+            font-size 0.55rem
+            border-radius 4px
+            color white 
+            background-color $red
+            border none
+            cursor pointer
 
       &__text
         color $blue-dark
