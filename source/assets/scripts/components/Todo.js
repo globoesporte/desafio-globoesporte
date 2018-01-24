@@ -1,5 +1,5 @@
 import React from 'react';
-import cancel from '../../img/cancel.svg';
+
 
 export const Todo = (props) => {
   return (
