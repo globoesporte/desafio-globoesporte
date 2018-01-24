@@ -12,7 +12,7 @@ import {
   toogleEditTodo,
   changeTextTodo } from './lib';
 import {Header, TodosList, Todo, TodoEdit, Input, Footer} from './components';
-import {Router} from './router';
+import {Router} from './routes';
 import data from '../../../api/data.json';
 import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
