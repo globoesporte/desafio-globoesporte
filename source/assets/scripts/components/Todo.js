@@ -1,6 +1,5 @@
 import React from 'react';
 import cancel from '../../img/cancel.svg';
-import imgPath from '../lib/imgPath'
 
 export const Todo = (props) => {
   return (

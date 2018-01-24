@@ -28,7 +28,8 @@
         font-weight 600
 
       &__label
-        border 6px solid $blue-gray-light
+        border 6px solid $medium-gray
+        background-color white
         border-radius 50%
         cursor pointer
         width 1em
@@ -59,6 +60,7 @@
 
         &:checked + .todos__list__item__label
           border: 6px solid transparent;
+          background-color transparent
 
         &:checked + .todos__list__item__label:after
           transform scale(1)
