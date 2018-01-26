@@ -7,35 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
-
-// ========================================
-// PlUGINS
-// ========================================
-const NameAllModulesPlugin = require('name-all-modules-plugin');
-const stylusLoader = ExtractTextPlugin.extract('css-loader!stylus-loader');
-const externalCSS = new ExtractTextPlugin('../styles/[name].[chunkhash].css');
-const cleanDist = new CleanWebpackPlugin(['dist'], {
-  root:     __dirname,
-  verbose:  true,
-  dry:      false,
-});
-const fonts = new GoogleFontsPlugin({
-  fonts: [
-      { family: "Open Sans", variants: [ "400", "500", "600" ] }
-  ],
-  local: false
-});
-const html = new HtmlWebpackPlugin({
-  filename: '../index.html',
-  template: './source/index.html',
-  minify: {
-    collapseWhitespace: true
-  },
-});
-const splittingCode = new webpack.optimize.CommonsChunkPlugin({
-  name: 'vendor',
-  minChunks: Infinity
-});
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 // ========================================
 // WEBPACK CONFIG
@@ -53,8 +25,8 @@ module.exports = {
     path: path.resolve(__dirname, './dist/scripts/'),
   },
 
-  // DEVTOOLS
-  devtool: 'inline-source-map',
+  // DEBBUGING
+  devtool: 'source-map',
 
   // MODULES
   module: {
@@ -62,7 +34,7 @@ module.exports = {
       // STYLUS LOADER
       {
         test: /\.styl$/,
-        loader: stylusLoader
+        loader: ExtractTextPlugin.extract('css-loader!stylus-loader')
       },
       // JAVASCRIPT LOADER
       { 
@@ -115,22 +87,51 @@ module.exports = {
   // PLUGINS
   // ========================================
   plugins: [
-    cleanDist,
+    new CleanWebpackPlugin(['dist'], {
+      root:     __dirname,
+      verbose:  true,
+      dry:      false,
+    }),
     new webpack.NamedModulesPlugin(),
-    fonts,
-    externalCSS,
-    html,
+    new GoogleFontsPlugin({
+      fonts: [
+          { family: "Open Sans", variants: [ "400", "500", "600" ] }
+      ],
+      local: false
+    }),
+    new ExtractTextPlugin('../styles/[name].[chunkhash].css'),
+    new HtmlWebpackPlugin({
+      filename: '../index.html',
+      template: './source/index.html',
+      minify: {
+        collapseWhitespace: true
+      },
+    }),
     new webpack.NamedChunksPlugin((chunk) => {
       if (chunk.name) {
           return chunk.name;
       }
       return chunk.mapModules(m => path.relative(m.context, m.request)).join("_");
     }),
-    splittingCode,
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'runtime'
+      name: "vendor",
+      minChunks: function(module){
+        return module.context && module.context.includes("node_modules");
+      }
     }),
-    new NameAllModulesPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "manifest",
+      minChunks: Infinity
+    }),
+    new UglifyJSPlugin({
+      sourceMap: true
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
   ],
 
 }
