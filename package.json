@@ -21,7 +21,6 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-transition-group": "^2.2.1",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
