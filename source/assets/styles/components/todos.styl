@@ -1,6 +1,6 @@
 .todos
   background-color #fff
-  margin 1.3em auto 0.9em
+  margin 1.4em auto 0.8em
   wrapper(18.5em, 0)
   box-shadow 2px 3px 10px $light-gray-2
 
@@ -10,7 +10,7 @@
     margin 0
 
     &__item
-      padding 0.82em 0.3em 0.82em 2.1em
+      padding 0.82em 0.3em 0.82em 2.15em
       display flex
       justify-content space-between
       align-items flex-start
@@ -29,29 +29,31 @@
         align-self center
 
       &__label
-        border 5px solid $light-gray-2
+        border 0.3em solid $light-gray-2
         background-color white
         border-radius 50%
         cursor pointer
-        width 1em
-        height 1em
-        right 2.1em
-        top 1.1em
-        position: absolute
+        width 0.85em
+        height 0.8em
+        right 1.6em
+        top 0.9em
+        position absolute
         transition all 200ms ease-in-out
         margin-right 0.5em
+        transform-origin 50% 50% 0
 
         &:after
           background-image url(./../img/check-mark.svg)
           background-size cover
-          content: ""
-          width 1.2em
-          height 1.2em
-          top -0.17em
+          content ""
+          width 1em
+          height 1em
+          bottom -0.1em
           right -0.1em
           transform scale(0)
           transition all 200ms ease-in-out
           position absolute
+          transform-origin 50% 50% 0
 
       &__checkbox
         order 2
@@ -60,7 +62,7 @@
         z-index 2
 
         &:checked + .todos__list__item__label
-          border: 6px solid transparent;
+          border 0.3em solid transparent
           background-color transparent
 
         &:checked + .todos__list__item__label:after
@@ -79,7 +81,7 @@
         order 3
         transform scale(0)
         transition transform 200ms ease-in-out
-        margin-left 1.2em
+        margin-left 1.1em
         cursor pointer
         outline none
 
@@ -87,7 +89,7 @@
           height 1.3em
 
       &__edit
-        padding 0.93em 2.1em
+        padding 0.95em 2.1em
         background-color $blue-dark
 
         &__form

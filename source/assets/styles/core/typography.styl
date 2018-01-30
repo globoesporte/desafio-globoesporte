@@ -1,26 +1,63 @@
 // ==================================================
 // Typography
+// https://css-tricks.com/rems-ems/
 // ==================================================
 
-$text-size = 1rem
+html
+  font-size 17px
 
-h1
-  font-size ($text-size * 3)
+// Media Queries
+@media (min-width: 1920px)
+  html 
+    font-size 30px
 
-h2
-  font-size ($text-size * 2)
+@media (max-width: 1920px)
+  html 
+    font-size 25px
 
-h3
-  font-size ($text-size * 1.5)
+@media (max-width: 1600px)
+  html 
+    font-size 20px
 
-h4
-  font-size ($text-size * 1.2)
+@media (max-width: 1366px)
+  html 
+    font-size 16px
 
-h5
-  font-size $text-size
+@media (max-width: 600px)
+  html 
+    font-size 15px
 
-h6, label, span
-  font-size ($text-size * 0.8)
+@media (max-width: 400px)
+  html 
+    font-size 14px
 
-p
-  font-size $text-size
+
+// Modules
+.header
+  font-size 1rem
+
+.new-todo-input
+  font-size 1.06rem
+  @media (max-width: 400px)
+    font-size 0.97rem
+    
+.todos
+  font-size 1rem
+
+.footer
+  font-size 0.55rem
+
+
+// Elements
+.header__time__day
+  font-size 2.2em
+
+.header__time__more-info__day-week
+  font-size 0.95em
+
+.todos__list__item__text
+  font-size 0.82em
+  
+.header__time__more-info__month-year
+  font-size 0.6em
+  
