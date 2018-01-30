@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const poststylus = require('poststylus');
 
 // ========================================
 // WEBPACK CONFIG
@@ -98,6 +99,13 @@ module.exports = {
           { family: "Open Sans", variants: [ "400", "500", "600" ] }
       ],
       local: false
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        stylus: {
+          use: [poststylus([ 'autoprefixer' ])]
+        }
+      }
     }),
     new ExtractTextPlugin('../styles/[name].[chunkhash].css'),
     new HtmlWebpackPlugin({
