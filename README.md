@@ -1,3 +1,16 @@
+# Instruções
+
+Caros amigos do Globo Esporte, eis aqui o meu projeto finalizado. Seguem abaixo algumas instruções: 
+
+ - `npm install` instala as dependências do projeto
+ - `npm start` inicia o ambiente de desenvolvimento
+ - `npm run build` produz um bundle pronto para utilização em `/dist`
+ - `npm test` realiza os testes unitários automatizados
+
+Abraços!
+
+---
+
 # Desafio Globoesporte
 
 Desenvolva uma aplicação de tarefas (todo list) utilizando React.
