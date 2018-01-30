@@ -1,8 +1,8 @@
 .todos
   background-color #fff
   margin 1.3em auto 0.9em
-  wrapper(296px, 0)
-  box-shadow 6px -2px 50px #c8cdd5
+  wrapper(18.5em, 0)
+  box-shadow 2px 3px 10px $light-gray-2
 
   &__list
     padding-left 0
@@ -10,7 +10,7 @@
     margin 0
 
     &__item
-      padding 0.7em 0.3em 0.7em 2.1em
+      padding 0.82em 0.3em 0.82em 2.1em
       display flex
       justify-content space-between
       align-items flex-start
@@ -29,14 +29,14 @@
         align-self center
 
       &__label
-        border 6px solid $medium-gray
+        border 5px solid $light-gray-2
         background-color white
         border-radius 50%
         cursor pointer
         width 1em
         height 1em
         right 2.1em
-        top 1em
+        top 1.1em
         position: absolute
         transition all 200ms ease-in-out
         margin-right 0.5em
@@ -47,7 +47,7 @@
           content: ""
           width 1.2em
           height 1.2em
-          top -0.1em
+          top -0.17em
           right -0.1em
           transform scale(0)
           transition all 200ms ease-in-out
@@ -76,12 +76,15 @@
         flex 0 0 15%
         border 1px solid transparent
         background-color transparent
-        color $red
         order 3
         transform scale(0)
         transition transform 200ms ease-in-out
         margin-left 1.2em
         cursor pointer
+        outline none
+
+        &__icon
+          height 1.3em
 
       &__edit
         padding 0.93em 2.1em
