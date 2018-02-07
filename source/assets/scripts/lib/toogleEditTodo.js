@@ -1,3 +1,3 @@
-export const toogleEditTodo = (todo) => Object.assign({}, todo, {
+export const toogleEditTodo = todo => Object.assign({}, todo, {
   isBeingEdit: !todo.isBeingEdit
 })

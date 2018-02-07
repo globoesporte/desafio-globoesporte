@@ -7,19 +7,20 @@ export class TodoEdit extends Component {
   }
 
   render() {
+    const { id, editSubmit, text, editText, editInputChange } = this.props;
     return (
       <li className="todos__list__item__edit x" >
         <form 
-          onBlur={() => this.props.editSubmit(this.props.id)} 
+          onBlur={() => editSubmit(id)} 
           className="todos__list__item__edit__form x"
-          onSubmit={() => this.props.editSubmit(this.props.id)}>
+          onSubmit={() => editSubmit(id)}>
           <input 
             ref={(input) => {this.nameInput = input }} 
             className="todos__list__item__edit__form__input x" 
             type="text" 
-            placeholder={this.props.text} 
-            value={this.props.editText}
-            onChange={this.props.editInputChange}
+            placeholder={text} 
+            value={editText}
+            onChange={editInputChange}
             /> 
         </form>
       </li>

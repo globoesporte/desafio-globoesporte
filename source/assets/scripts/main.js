@@ -10,9 +10,10 @@ import {
   updateTodo, 
   filterTodos,
   toogleEditTodo,
-  changeTextTodo } from './lib';
-import {Header, TodosList, Todo, TodoEdit, Input, Footer} from './components';
-import {Router} from './routes';
+  changeTextTodo 
+} from './lib';
+import { Header, TodosList, Todo, TodoEdit, Input, Footer } from './components';
+import { Router } from './routes';
 import data from '../../../api/data.json';
 import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
@@ -36,17 +37,17 @@ class App extends Component {
     });
   }
 
-  handleInputChange = (e) => this.setState({
+  handleInputChange = e => this.setState({
     newTodo: e.target.value,
     error: ''
   });
 
-  handleEditInputChange = (e) => this.setState({
+  handleEditInputChange = e => this.setState({
     editText: e.target.value,
     error: ''
   });
 
-  handleInputSubmit = (e) => {
+  handleInputSubmit = e => {
     e.preventDefault();
     const newTodo = createNewTodo(this.state.newTodo);
     const updateTodos = addTodo(this.state.todos, newTodo);
@@ -56,7 +57,7 @@ class App extends Component {
     });
   }
 
-  handleEditSubmit = (id) => {
+  handleEditSubmit = id => {
     const todo = findById(id, this.state.todos);
     const text = this.state.editText || todo.text;
     const newTextTodo = changeTextTodo(text, todo);
@@ -67,19 +68,19 @@ class App extends Component {
     });
   }
 
-  handleEmptySubmit = (e) => {
+  handleEmptySubmit = e => {
     e.preventDefault();
     this.setState({
       error: 'Você precisa fornecer uma tarefa'
     })
   }
 
-  handleDeleteTodo = (id) => {
+  handleDeleteTodo = id => {
     const updateTodos = deleteTodo(this.state.todos, id);
     this.setState({todos: updateTodos});
   }
 
-  handleToogleEditTodo = (id) => {
+  handleToogleEditTodo = id => {
     const todo = findById(id, this.state.todos);
     const editTodo = toogleEditTodo(todo);
     const updatedTodos = updateTodo(this.state.todos, editTodo);
@@ -89,7 +90,7 @@ class App extends Component {
     });
   }
 
-  handleStatusChange = (id) => {
+  handleStatusChange = id => {
     const todo = findById(id, this.state.todos);
     const toogle = toogleTodo(todo);
     const updatedTodos = updateTodo(this.state.todos, toogle);

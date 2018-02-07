@@ -1,13 +1,13 @@
 import React from 'react';
 
-export const Input = (props) =>  (
-  <form onSubmit={props.onSubmit}>
+export const Input = ({onSubmit, value, onChange}) =>  (
+  <form onSubmit={onSubmit}>
     <input 
     className="new-todo-input x" 
     type="text" 
     placeholder="Escreva aqui uma nova tarefa..."
-    value={props.value}
-    onChange={props.onChange}
+    value={value}
+    onChange={onChange}
     />
   </form>
 );

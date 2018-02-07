@@ -1,14 +1,14 @@
 import React from "react";
-import {Link} from '../routes';
+import { Link } from '../routes';
 
-export const Footer = (props) => {
+export const Footer = ({remainingTodos}) => {
 
-  const fazer = props.remainingTodos > 1 ? 'Faltam' : 'Falta';
-  const tarefa = props.remainingTodos > 1 ? ' tarefas' : 'tarefa';
-  const remaining = props.remainingTodos === 0 
+  const fazer = remainingTodos > 1 ? 'Faltam' : 'Falta';
+  const tarefa = remainingTodos > 1 ? ' tarefas' : 'tarefa';
+  const remaining = remainingTodos === 0 
     ? <span className="x footer__text">Sem tarefas</span>
     : <span className="x footer__text">
-        {fazer} {props.remainingTodos} {tarefa}
+        {fazer} {remainingTodos} {tarefa}
       </span>
 
   return (
