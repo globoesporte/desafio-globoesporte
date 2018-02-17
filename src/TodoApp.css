@@ -1,0 +1,132 @@
+.main {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  background-color: #ebebeb;
+  width: 600px;
+  margin: 0 auto;
+  text-align: left;
+} 
+
+
+.header {
+  background-color: #328b00;
+  height: 50px;
+  color: #2d7502;
+}
+
+.title {
+  font-size: 1.5em;
+  color : #328b00;
+}
+
+
+.logo {
+  background-color: #328b00;
+  height: 30px;
+  padding: 10px;
+  color: #2d7502;
+  font-size: large;
+}
+
+
+.hoje {
+  background-color: #2d7502;
+  height: 50px;
+  width : 100px;
+  padding: 0px;
+  color: #328b00;
+  font-size: large;
+  float: right;
+}
+
+
+
+
+.todofield{
+  padding : 50px;
+  height: 50px;
+  position: relative;
+}
+
+
+.todofield input {
+  border: none;
+  background: transparent;
+  bottom: 0;
+  line-height: 0.7;
+  width : 70%;
+  padding-bottom: 10px;
+  color: #616573; 
+  outline: none;
+  border-bottom-width: 0.05px;
+  border-bottom-color: #616573; 
+  border-bottom-style: solid;
+}
+
+.todolist{
+  width: 655px;
+  margin: auto;
+}
+
+.todolist  ul {
+  display: inline;
+  float: none;
+}
+
+
+ul {
+  list-style: none;
+}
+
+ul>li:hover {
+  background-color: #ededed;
+}
+
+.done {
+  display: block;
+  float: none;
+  width : 100%;
+  background-color: #ffffff;
+}
+
+.done:hover {
+  background-color: #ededed;
+}
+
+.todo {
+  display: block;
+  float: none;
+  background-color: #ffffff;
+}
+
+
+.todo:hover {
+  background-color: #ededed;
+}
+
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: 100;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .82;
+  color : red;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+}
+
+svg {
+  width: 30px;
+  display: block;
+  margin: 40px auto 0;
+}
+
+.path-circle {
+  -webkit-animation: dash .9s ease-in-out;
+  animation: dash .9s ease-in-out;
+  
+}

@@ -13,8 +13,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-  "keywords": ["'globoesporte","globo.com","reactjs","desafio"],
-  "author": "Ricardo Sixel",
-  "license": "ISC"
+    "keywords": [
+      "globoesporte",
+      "globo.com",
+      "reactjs",
+      "desafio"
+    ],
+    "author": "Ricardo Sixel",
+    "license": "ISC"
   }
 }

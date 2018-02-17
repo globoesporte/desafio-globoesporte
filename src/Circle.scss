@@ -1,0 +1,14 @@
+svg {
+    width: 30px;
+    display: block;
+    margin: 40px auto 0;
+  }
+  
+  .path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    &.circle {
+      -webkit-animation: dash .9s ease-in-out;
+      animation: dash .9s ease-in-out;
+    }
+  }
