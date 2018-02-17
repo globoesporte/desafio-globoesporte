@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { ToggleButton } from './ToggleButton';
 import './Circle.scss';
 import './Check.scss';
 
@@ -8,6 +8,9 @@ export class TodoListItem extends React.Component {
         super(props);
         this.onClickClose = this.onClickClose.bind(this);
         this.onClickDone = this.onClickDone.bind(this);
+        this.state = {
+            active: false
+        };
     }
     onClickClose() {
         var index = parseInt(this.props.index, 0);
@@ -17,26 +20,29 @@ export class TodoListItem extends React.Component {
         var index = parseInt(this.props.index, 0);
         this.props.markTodoDone(index);
     }
+    handleToggle() {
+        this.setState({ active: !this.state.active })
+    }
     render() {
         var todoClass = this.props.item.status;
+
+        const style = {
+            //fontSize: '6em',
+            //position: 'absolute',
+//            top: '50%',
+  //          left: '50%',
+    //        transform: 'translate(-50%, -50%)'
+        }
 
         return (
             <li className="list-group-item ">
                 <div className={todoClass}>
                     {this.props.item.text}
-                    
-                    <span hidden={this.props.item.status==='todo'} aria-hidden="true" onClick={this.onClickDone}>
-                    <div class="checkmark-circle">
-                        <div class="background"></div>
-                        <div class="checkmark draw"></div>
-                    </div>
+
+                    <span style={style} onClick={this.handleToggle.bind(this)}>
+                        <ToggleButton active={this.state.active} />
                     </span>
-                    <span hidden={this.props.item.status==='done'} aria-hidden="true" onClick={this.onClickDone}>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53">
-                            <circle className="path-circle" fill="none" stroke="#dfdfe7" stroke-width="10" stroke-miterlimit="10" cx="26" cy="26" r="20" />
-                        </svg>
-                    </span>
-                    
+
                     <button type="button" className="close" onClick={this.onClickClose}>&times;</button>
                 </div>
             </li>
