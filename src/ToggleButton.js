@@ -13,10 +13,17 @@ export class ToggleButton extends Component {
       },
         inner: {
         fill: 'none',
-        stroke: 'currentColor',
-        strokeWidth: '3',
+        stroke: '#616573',
+        strokeWidth: '4',
         strokeLinecap: 'square',
-        strokeLinejoin: 'round'
+        strokeLinejoin: 'square'
+      },
+      innerCheck: {
+        fill: 'none',
+        stroke : '#378d04',
+        strokeWidth: '4',
+        strokeLinecap: 'square',
+        strokeLinejoin: 'square'
       },
       ...this.props.style
     }
@@ -29,9 +36,10 @@ export class ToggleButton extends Component {
     const circleSpring = spring(circleLength, {stiffness: 60, damping: 11})
     const checkedSpring = spring(checkedLength, {stiffness: 120, damping: 13.8})
 
+
     return (
-      <svg {...this.props} style={style.container} viewBox="0 0 24 24" >
-        <g style={style.inner}>
+      <svg {...this.props}  style={style.container} viewBox="0 0 24 24" >
+        <g style={this.props.active ?style.innerCheck:style.inner}>
           <Motion
             defaultStyle={{offset: defaultSpring}}
             style={{offset: this.props.active ? circleSpring : checkedSpring}}
