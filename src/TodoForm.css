@@ -1,0 +1,24 @@
+.todofield{
+    padding : 50px;
+    height: 50px;
+    position: relative;
+  }
+  
+  
+.todofield input {
+    border: none;
+    background: transparent;
+    bottom: 0;
+    line-height: 0.7;
+    width : 90%;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    color: #616573; 
+    outline: none;
+    font-size:  large;
+    border-bottom-width: 0.05px;
+    border-bottom-color: #d2d2d2; 
+    border-bottom-style: solid;
+}
+
+  

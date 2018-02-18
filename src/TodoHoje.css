@@ -1,0 +1,56 @@
+
+.hoje {
+    background-color: #2d7502;
+    height: 80px;
+    padding: 0px;
+    color: #328b00;
+    float: right;
+    width : 180px;
+  }
+  
+  
+  .hoje-group{
+    color: #328b00;
+    background-color: transparent;
+    padding : 0px;
+   }
+  
+  .hoje-dia{
+    color: #4cac0d;
+    background-color: transparent;
+    padding : 0px;
+    font-size: 50px;
+    font-weight: 600;
+    overflow: hidden;
+    top: 5px;
+    left: 15px;
+    position: relative;
+  }
+  
+  .hoje-sem-mes-ano{
+    color: #4cac0d;
+    background-color: transparent;
+    font-size: 10px;
+    font-weight: 600;
+    padding : 10px;
+    position: relative;
+    float: right;
+    top: 5px;
+  }
+  
+  .hoje-semana{
+    color: #4cac0d;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    padding : 0px;
+  }
+  
+  .hoje-mes-ano{
+    color: #4cac0d;
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    padding : 0px;
+  }
+  

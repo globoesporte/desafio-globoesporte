@@ -1,6 +1,8 @@
 import React from 'react';
 import {TodoListItem} from './TodoListItem'
 
+import './TodoList.css';
+
 export class TodoList extends React.Component {
     render () {
       var items = this.props.items.map((item, index) => {
@@ -9,7 +11,7 @@ export class TodoList extends React.Component {
         );
       });
       return (
-        <ul className="list-group"> {items} </ul>
+        <ul className="todolistgroup"> {items} </ul>
       );
     }
   }

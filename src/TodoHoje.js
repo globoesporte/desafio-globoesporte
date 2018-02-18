@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import 'moment/locale/pt';
 
-import './TodoApp.css';
+import './TodoHoje.css';
 
 Moment.globalLocale = 'pt';
 
