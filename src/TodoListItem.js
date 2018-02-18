@@ -1,7 +1,7 @@
 import React from 'react';
 import { ToggleButton } from './ToggleButton';
-import './Circle.scss';
-import './Check.scss';
+
+import './TodoApp.css';
 
 export class TodoListItem extends React.Component {
     constructor(props) {
@@ -28,22 +28,27 @@ export class TodoListItem extends React.Component {
 
         const style = {
             //fontSize: '6em',
-            //position: 'absolute',
-//            top: '50%',
-  //          left: '50%',
-    //        transform: 'translate(-50%, -50%)'
+            float: 'right',
+            margin: '0 auto',
+            display: 'block',
+            top: '10px',
+            left: '5px',
+            transform: 'translate(1px, -45px)',
+            'padding-right' : '40px'
         }
 
         return (
             <li className="list-group-item ">
                 <div className={todoClass}>
-                    {this.props.item.text}
+                    <span className="todotitle" >{this.props.item.text}</span>
 
-                    <span style={style} onClick={this.handleToggle.bind(this)}>
+                    <div style={style} onClick={this.handleToggle.bind(this)}>
                         <ToggleButton active={this.state.active} />
-                    </span>
+                    </div>
 
-                    <button type="button" className="close" onClick={this.onClickClose}>&times;</button>
+                    <div>
+                        <button type="button" className="close" onClick={this.onClickClose}>&times;</button>
+                    </div>
                 </div>
             </li>
         );

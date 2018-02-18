@@ -22,7 +22,7 @@ export class TodoForm extends React.Component {
         <div className="todofield">
 
         <form ref="todoForm" onSubmit={this.onSubmit}>
-          <input ref="todoInput" placeHolder="Escreva aqui a nova todo..."
+          <input ref="todoInput" placeHolder="Escreva aqui a nova tarefa..."
           />
         </form>
       </div>

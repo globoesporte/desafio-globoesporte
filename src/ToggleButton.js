@@ -13,7 +13,7 @@ export class ToggleButton extends Component {
       },
         inner: {
         fill: 'none',
-        stroke: '#616573',
+        stroke: '#dcdfe4',
         strokeWidth: '4',
         strokeLinecap: 'square',
         strokeLinejoin: 'square'
