@@ -7,11 +7,11 @@ Essa resposta também pode ser encontrada [aqui no meu Github](https://github.co
 
 Basicamente a tarefa consiste em desenvolver uma aplicação de tarefas (todo list) utilizando React.
 
-## Devem ser atendidos os seguintes passos:
+## Breve descrição do problema
 
-- Criar um fork desse projeto, e quando concluído crie um pull request do seu fork para esse repositório.
+- Criar um fork do projeto [Desafio Globo Esporte](https://github.com/globoesporte/desafio-globoesporte.), e quando concluído criar um pull request do fork para esse repositório.
 
-- Desenvolver as seguintes features  onde o usuário pode:
+- Devem ser desenolvidas as seguintes features,  onde o usuário pode:
 
     - Inserir tarefas
     - Remover tarefas
@@ -27,19 +27,35 @@ Foi sugerido que se siga o seguinte `layout`:
 
 ![layout](./layout/layout.jpg)
 
+
+## Abordagem da solução
+
+- Foi criada uma estrutura componentizada demonstrando como seria uma organizado um projeto cujo os componentes seriam passíveis de reaproveitamento;
+
+- Utilizou-se `css` simples devido ao grande número de possibilidades existentes tais como scss, sass 
+
+- Apesar de saber da existência das [respostas de concorrentes ](https://github.com/globoesporte/desafio-globoesporte/pulls) me ative a desenvolver a solução da maneira.
+
+- Foram "esprestados" da web algumas soluções tais como :
+    - [Todo list](https://codepen.io/marekdano/pen/bVNYpq);
+    - [Pure css toggle button](https://codepen.io/mallendeo/pen/eLIiG);
+    - [SVG Toggle check](https://react.rocks/example/SVG_toggle_check).
+
+    Faz parte da cultura da equipe reutilizar fontes open source disponíveis e quis demonstrar a capacidade de fazê-lo.
+- Foi feita um prototipação inicial :
+    - Construção básica do layout com form;
+    - Refatoração em componentes do render e do css;
+    
+
+## Sobre mim e o desafio
+
+- Trabalho com front-end há muito tempo. Já desenvolvi frameworks como Sencha ExtJS, GWT, JSF e Angular 5. 
+- Graças ao desfio aprendi mais um: React :) .
+- Tenho uma enorme atração por aprender o *hype*.
+- Vejo com bons olhos o trabalho que a equipe do [globosporte.com]() e a [globo.com]() vem fazendo , na fronteira de novas tecnologias tanto de front-end como back-end e *DevOps*.
+
 ---
 
-## Dados
-
-- É necessário que seja carregado um estado inicial a partir de um aquivo JSON , `api/data.json`.
-
-- A partir do estado inicial, as ações de adicionar, remover e editar items devem se dar localmente no JS sem persistir estado.
-
-- Cada item da lista só pode ter dois status, `done` ou `todo`.
-
-- Para esse desafio não é necessário guardar as modificações que o usuário vai fazer na aplicação.
-
----
 
 ## Instruções de execução e teste
 
