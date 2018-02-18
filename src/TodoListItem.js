@@ -27,19 +27,13 @@ export class TodoListItem extends React.Component {
         var todoClass = this.state.status;
 
         const style = {
-            //fontSize: '6em',
-            float: 'right',
-            margin: '0 auto',
             display: 'block',
-            top: '10px',
-            left: '5px',
-            transform: 'translate(1px, -45px)',
-            'padding-right' : '40px'
+            marginTop : '10px'
         }
 
         return (
-            <li className="todoitem ">
-                <div className={todoClass}>
+            <li >
+                <div className={todoClass+' todoitem'}>
                     <span className="todotitle" >{this.props.item.text}</span>
 
                     <div style={style} onClick={this.handleToggle.bind(this)}>

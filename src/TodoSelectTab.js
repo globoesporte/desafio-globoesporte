@@ -13,7 +13,7 @@ export class TodoSelectTab extends Component {
             );
         });
         return (
-            <ul class="tg-list"> {items} </ul>
+            <ul className="tg-list"> {items} </ul>
         );
 
     }

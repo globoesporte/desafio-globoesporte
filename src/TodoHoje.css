@@ -42,6 +42,7 @@
   font-size: 20px;
   font-weight: 600;
   padding: 0px;
+  
 }
 
 .hoje-mes-ano {
@@ -50,4 +51,5 @@
   font-size: 12px;
   font-weight: 600;
   padding: 0px;
+  text-transform: uppercase;
 }

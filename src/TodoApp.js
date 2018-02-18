@@ -9,9 +9,10 @@ import { TodoForm } from './TodoForm';
 import { TodoList } from './TodoList';
 import { TodoHoje } from './TodoHoje';
 import { TodoSelectTab } from './TodoSelectTab';
+import { TodoSummary } from './TodoSummary';
 
 
-class TodoApp extends React.Component {
+export class TodoApp extends React.Component {
   constructor(props) {
     super(props);
     this.addItem = this.addItem.bind(this);
@@ -45,27 +46,42 @@ class TodoApp extends React.Component {
   }
   render() {
     const tabs = [
-      { text: 'Todo' },
+      { text: 'Todos' },
       { text: 'Feitos' },
       { text: 'A fazer' }
 
     ];
 
+    const items = this.state.todoItems;
+
+    var todoCount = 0;
+
+    items.forEach(x => {
+      if (x.status === "todo") {
+        todoCount++;
+      }
+    });
+
     return (
       <div id="TodoApp" className="main">
         <TodoHeader />
 
-        <body className="body" >
+        <main className="body" >
           <TodoForm addItem={this.addItem} />
 
 
           <div className="todolist">
-            <TodoList items={this.props.initItems} removeItem={this.removeItem} markTodoDone={this.markTodoDone} />
+            <TodoList items={items} removeItem={this.removeItem} markTodoDone={this.markTodoDone} />
           </div>
-          <div className="filtro">
-            <TodoSelectTab name="filtro" items={tabs} />
+          <div className="footer" >
+            <div className="footersummary">
+              <TodoSummary total={todoCount} />
+            </div>
+            <div className="footertabs">
+              <TodoSelectTab name="filtro" items={tabs} />
+            </div>
           </div>
-        </body>
+        </main>
       </div>
     );
   }

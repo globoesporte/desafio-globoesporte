@@ -3,7 +3,7 @@ import {Motion, spring} from 'react-motion';
 
 export class ToggleButton extends Component {
   static defaultProps = {
-    height: '1.5em'
+    height: '2em'
   };
 
   render() {
@@ -39,10 +39,10 @@ export class ToggleButton extends Component {
 
     return (
       <svg {...this.props}  style={style.container} viewBox="0 0 24 24" >
-        <g style={this.props.active ?style.innerCheck:style.inner}>
+        <g style={this.props.active ?style.inner:style.innerCheck}>
           <Motion
             defaultStyle={{offset: defaultSpring}}
-            style={{offset: this.props.active ? circleSpring : checkedSpring}}
+            style={{offset: this.props.active ? checkedSpring: circleSpring }}
           >
           {({ offset }) =>
             <path

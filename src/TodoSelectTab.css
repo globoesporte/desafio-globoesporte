@@ -1,3 +1,23 @@
+.tg-list {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0px;
+    padding: 0;
+    list-style: none;
+}
+
+.tg-list li {
+    margin: 0;
+    padding: 0;
+}
+
+.tg-list-item {
+    margin: 1em 0.2em;
+}
+
+
 .tgl-btn {
     background-color: transparent;
     border: none;
@@ -14,29 +34,6 @@
 }
 
 /* Based on https://codepen.io/mallendeo/pen/eLIiG */
-
-.tg-list {
-    position: relative;
-    left:72px;
-    top: -10px;
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0px;
-    padding: 0;
-    list-style: none;
-    
-}
-
-.tg-list li {
-    margin: 0;
-    padding: 0;
-}
-
-.tg-list-item {
-    margin: 1em 0.2em;
-}
 
 .tgl {
     display: none;

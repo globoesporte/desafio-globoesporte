@@ -29,5 +29,5 @@ var todoItems = [
   ];
   
 
-ReactDOM.render(<TodoApp initItems={todoItems}/>, document.getElementById('root'));
+ReactDOM.render(<TodoApp todoItems={todoItems}/>, document.getElementById('root'));
 registerServiceWorker();

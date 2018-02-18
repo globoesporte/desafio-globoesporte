@@ -35,3 +35,18 @@
   display: block;
   float: right;
 }
+
+.footer {
+  width : 360px;
+  margin:auto;
+  display: grid;
+  grid-template-columns: auto 175px;
+}
+
+.footertabs{
+   margin-top : 15px;
+}
+
+.footersummary{
+  margin-top : 12px;
+}
