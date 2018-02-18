@@ -83,9 +83,6 @@
   padding : 0px;
 }
 
-
-
-
 .title {
 
   color : #328b00;
@@ -147,6 +144,10 @@ ul>li:hover {
   background-color: #ededed;
 }
 
+.todoitem:hover .tododelete{
+  display: block;
+}
+
 .todo {
   display: block;
   float: none;
@@ -163,6 +164,10 @@ ul>li:hover {
   padding-bottom: 20px;
 }
 
+.tododelete{
+  display: none;
+}
+
 .todo:hover {
   background-color: #ededed;
 }
@@ -174,7 +179,7 @@ ul>li:hover {
   line-height: 1;
   text-shadow: 0 1px 0 #fff;
   filter: alpha(opacity=20);
-  opacity: .82;
+  opacity: .62;
   color : red;
   padding: 0;
   cursor: pointer;

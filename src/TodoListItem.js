@@ -38,7 +38,7 @@ export class TodoListItem extends React.Component {
         }
 
         return (
-            <li className="list-group-item ">
+            <li className="todoitem ">
                 <div className={todoClass}>
                     <span className="todotitle" >{this.props.item.text}</span>
 
@@ -46,7 +46,7 @@ export class TodoListItem extends React.Component {
                         <ToggleButton active={this.state.status==='todo'} />
                     </div>
 
-                    <div>
+                    <div className="tododelete">
                         <button type="button" className="close" onClick={this.onClickClose}>&times;</button>
                     </div>
                 </div>
