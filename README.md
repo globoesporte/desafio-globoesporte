@@ -3,6 +3,8 @@
 
 Meu nome é Ricardo Girardi Sixel e essa é minha resposta ao [Desafio Globo Esporte](https://github.com/globoesporte/desafio-globoesporte.).
 
+
+
 Essa resposta também pode ser encontrada [aqui no meu Github](https://github.com/rsixel/desafio-globoesporte)
 
 Basicamente a tarefa consiste em desenvolver uma aplicação de tarefas (todo list) utilizando React.
@@ -30,11 +32,13 @@ Foi sugerido que se siga o seguinte `layout`:
 
 ## Abordagem da solução
 
-- Foi criada uma estrutura componentizada demonstrando como seria uma organizado um projeto cujo os componentes seriam passíveis de reaproveitamento;
+- Utilizei o Visual Studio Code , a.k.a., VS Code para desenvolver todo o projeto. Open source, funciona nas plataformas Linux, Mac e Windows e tem vários plugins com suporte a HTML5, css, React etc.;
+- Utilizo Ubuntu 17;
+- Foi criada uma estrutura componentizada demonstrando como seria organizado um projeto cujo os componentes seriam passíveis de reaproveitamento;
 
 - Utilizou-se `css` simples devido ao grande número de possibilidades existentes tais como scss, sass 
 
-- Apesar de saber da existência das [respostas de concorrentes ](https://github.com/globoesporte/desafio-globoesporte/pulls) me ative a desenvolver a solução da maneira.
+- Apesar de saber da existência das [respostas de concorrentes ](https://github.com/globoesporte/desafio-globoesporte/pulls) me ative a desenvolver a solução da maneira. O única exceção foi obter o [SVG da logo ](https://github.com/globoesporte/desafio-globoesporte/pull/3/files#diff-b8e567eb97ee515bcba54d4868ae77e6) contida no pull request do concorrente/futuro colega  [Rodolfo Mói de Oliveira](https://github.com/rodmoioliveira). Mas dando os créditos merecidos aqui a ele.
 
 - Foram "esprestados" da web algumas soluções tais como :
     - [Todo list](https://codepen.io/marekdano/pen/bVNYpq);
@@ -45,7 +49,8 @@ Foi sugerido que se siga o seguinte `layout`:
 - Foi feita um prototipação inicial :
     - Construção básica do layout com form;
     - Refatoração em componentes do render e do css;
-    
+
+- Uma vez o layout pronto, foi utilizado TDD para a abordagem final das *features* solicitadas no desafio.
 
 ## Sobre mim e o desafio
 
