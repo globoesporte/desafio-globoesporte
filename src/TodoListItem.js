@@ -9,7 +9,7 @@ export class TodoListItem extends React.Component {
         this.onClickClose = this.onClickClose.bind(this);
         this.onClickDone = this.onClickDone.bind(this);
         this.state = {
-            active: false
+            status: this.props.item.status
         };
     }
     onClickClose() {
@@ -21,10 +21,10 @@ export class TodoListItem extends React.Component {
         this.props.markTodoDone(index);
     }
     handleToggle() {
-        this.setState({ active: !this.state.active })
+        this.setState({ status: this.state.status==='todo'?'done':'todo' })
     }
     render() {
-        var todoClass = this.props.item.status;
+        var todoClass = this.state.status;
 
         const style = {
             //fontSize: '6em',
@@ -43,7 +43,7 @@ export class TodoListItem extends React.Component {
                     <span className="todotitle" >{this.props.item.text}</span>
 
                     <div style={style} onClick={this.handleToggle.bind(this)}>
-                        <ToggleButton active={this.state.active} />
+                        <ToggleButton active={this.state.status==='todo'} />
                     </div>
 
                     <div>
