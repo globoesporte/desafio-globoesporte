@@ -5,9 +5,9 @@ import './TodoSummary.css'
 export class TodoSummary extends Component {
     render() {
         return (
-            <spam className="summary">
+            <span className="summary">
                 Faltam {this.props.total} tarefas
-          </spam>
+          </span>
 
         );
     }

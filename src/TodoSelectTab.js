@@ -9,7 +9,7 @@ export class TodoSelectTab extends Component {
     render() {
         var items = this.props.items.map((item, index) => {
             return (
-                <TodoSelectTabButton name={this.props.name} key={index} item={item} index={index} tabSelect={this.props.tabSelect} />
+                <TodoSelectTabButton selected={this.props.selected===item.text} name={this.props.name} key={index} item={item} index={index} tabSelect={this.props.tabSelect} />
             );
         });
         return (

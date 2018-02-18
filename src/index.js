@@ -5,29 +5,8 @@ import TodoApp from './TodoApp';
 import registerServiceWorker from './registerServiceWorker';
 
 
-var todoItems = [
-    {
-      "text": "Ir pra praia",
-      "status": "done"
-    },
-    {
-      "text": "Fazer exercício",
-      "status": "done"
-    },
-    {
-      "text": "Estudar React",
-      "status": "done"
-    },
-    {
-      "text": "Assistir série",
-      "status": "todo"
-    },
-    {
-      "text": "Ler o Globosporte",
-      "status": "todo"
-    }
-  ];
+
   
 
-ReactDOM.render(<TodoApp todoItems={todoItems}/>, document.getElementById('root'));
+ReactDOM.render(<TodoApp />, document.getElementById('root'));
 registerServiceWorker();

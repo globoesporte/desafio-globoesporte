@@ -11,6 +11,8 @@ import { TodoHoje } from './TodoHoje';
 import { TodoSelectTab } from './TodoSelectTab';
 import { TodoSummary } from './TodoSummary';
 
+import axios from 'axios';
+
 
 export class TodoApp extends React.Component {
   constructor(props) {
@@ -18,8 +20,27 @@ export class TodoApp extends React.Component {
     this.addItem = this.addItem.bind(this);
     this.removeItem = this.removeItem.bind(this);
     this.markTodoDone = this.markTodoDone.bind(this);
-    this.state = { todoItems: props.todoItems };
+    this.state = { todoItems: [], todoCount: 0 };
   }
+
+  componentDidMount() {
+    axios
+      .get('data.json')
+      .then(res => {
+
+        var c = 0;
+        res.data.forEach(x => {
+          if (x.status === "todo") {
+            c++;
+          }
+        });
+
+        this.setState({ todoItems: res.data, todoCount: c });
+
+      })
+      .catch(err => console.log(err))
+  }
+
   addItem(todoItem) {
     let todoItems = this.getState()['todoItems'];
 
@@ -54,13 +75,6 @@ export class TodoApp extends React.Component {
 
     const items = this.state.todoItems;
 
-    var todoCount = 0;
-
-    items.forEach(x => {
-      if (x.status === "todo") {
-        todoCount++;
-      }
-    });
 
     return (
       <div id="TodoApp" className="main">
@@ -69,16 +83,15 @@ export class TodoApp extends React.Component {
         <main className="body" >
           <TodoForm addItem={this.addItem} />
 
-
           <div className="todolist">
             <TodoList items={items} removeItem={this.removeItem} markTodoDone={this.markTodoDone} />
           </div>
           <div className="footer" >
             <div className="footersummary">
-              <TodoSummary total={todoCount} />
+              <TodoSummary total={this.state.todoCount} />
             </div>
             <div className="footertabs">
-              <TodoSelectTab name="filtro" items={tabs} />
+              <TodoSelectTab selected="Todos" name="filtro" items={tabs} />
             </div>
           </div>
         </main>
