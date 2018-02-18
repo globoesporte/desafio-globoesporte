@@ -14,14 +14,14 @@ export class ToggleButton extends Component {
         inner: {
         fill: 'none',
         stroke: '#dcdfe4',
-        strokeWidth: '4',
+        strokeWidth: '5',
         strokeLinecap: 'square',
         strokeLinejoin: 'square'
       },
       innerCheck: {
         fill: 'none',
         stroke : '#378d04',
-        strokeWidth: '4',
+        strokeWidth: '5',
         strokeLinecap: 'square',
         strokeLinejoin: 'square'
       },

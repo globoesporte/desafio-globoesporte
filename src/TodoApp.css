@@ -6,10 +6,10 @@
   margin: 0 auto;
   text-align: left;
   font-size: large;
-} 
+}
 
-.header-container{
-  width:100%;
+.header-container {
+  width: 100%;
 }
 
 .header {
@@ -23,36 +23,15 @@
 .logo {
   height: 45px;
   margin: 0 auto;
-  display : block;
-  padding : 17.5px;
+  display: block;
+  padding: 17.5px;
 }
-
 
 .title {
-
-  color : #328b00;
+  color: #328b00;
 }
 
-.todofield{
-  padding : 50px;
-  height: 50px;
-  position: relative;
+.filtro {
+  display: block;
+  float: right;
 }
-
-
-.todofield input {
-  border: none;
-  background: transparent;
-  bottom: 0;
-  line-height: 0.7;
-  width : 90%;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  color: #616573; 
-  outline: none;
-  font-size:  large;
-  border-bottom-width: 0.05px;
-  border-bottom-color: #d2d2d2; 
-  border-bottom-style: solid;
-}
-
