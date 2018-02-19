@@ -65,17 +65,9 @@ describe('<TodoApp />', () => {
     const wrapper = mount(<TodoApp />);
 
     wrapper.update();
-
-    console.log(wrapper.html());
-
-    // expect(wrapper.contains(<TodoItem>Ir pra praia</TodoItem>)).toBeTruthy();
-
-    //   //data.forEach( x => { expect(wrapper).toContainReact(x)});
-
-    //  expect(wrapper).toContainReact('Ir pra praia');
   });
 
-  it('Deve adicionar o item', () => {
+  it('Deve adicionar o item e o mesmo aparecer como TODO na lista.', () => {
     const wrapper = mount(<TodoApp />);
 
     var input = wrapper.find("#todoInput");
@@ -87,16 +79,12 @@ describe('<TodoApp />', () => {
 
     input.instance().value
   
-    var item = wrapper.find('.todotitle');
     
-    expect(item.instance().textContent).toBe("Teste de digitação");
+    var item = wrapper.find('div[children="Teste de digitação"]');
+    
+    expect(item).not.toBeUndefined();
   });
 
 
-  it('Deve adicionar item e o mesmo aparecer como TODO na lista.', () => {
-    const wrapper = mount(<TodoApp />);
-
-
-  });
 
 });
