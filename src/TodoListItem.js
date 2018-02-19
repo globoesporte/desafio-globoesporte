@@ -21,7 +21,7 @@ export class TodoListItem extends React.Component {
         this.props.markTodoDone(index);
     }
     handleToggle() {
-        this.setState({ status: this.state.status==='todo'?'done':'todo' })
+        this.setState({ status: this.state.status==="todo"?"done":"todo"})
     }
     render() {
         var todoClass = this.state.status;
@@ -37,7 +37,7 @@ export class TodoListItem extends React.Component {
                     <span className="todotitle" >{this.props.item.text}</span>
 
                     <div style={style} onClick={this.handleToggle.bind(this)}>
-                        <ToggleButton active={this.state.status==='todo'} />
+                        <ToggleButton status={this.state.status} />
                     </div>
 
                     <div className="tododelete">

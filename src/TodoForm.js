@@ -16,15 +16,15 @@ export class TodoForm extends React.Component {
       
       if(newItemValue) {
         this.props.addItem({newItemValue});
-        this.refs.form.reset();
+        this.refs.todoForm.reset();
       }
     }
     render () {
       return (
         <div className="todofield">
 
-        <form ref="todoForm" onSubmit={this.onSubmit}>
-          <input ref="todoInput" placeHolder="Escreva aqui a nova tarefa..."
+        <form id="todoForm" ref="todoForm" onSubmit={this.onSubmit}>
+          <input id="todoInput" name="todoInput" ref="todoInput" placeholder="Escreva aqui a nova tarefa..." maxLength="20"
           />
         </form>
       </div>

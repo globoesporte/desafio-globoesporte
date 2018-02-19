@@ -7,17 +7,20 @@ import './TodoHoje.css';
 
 Moment.globalLocale = 'pt';
 
+
 export class TodoHoje extends Component {
     render() {
 
         const today = moment();
+
+        const weekday = today.format('dddd').replace('-feira','');
 
         return (
             <div className="hoje">
                 <div className="hoje-group" >
                     
                     <div className="hoje-sem-mes-ano" >
-                        <Moment className="hoje-semana" element="div" locale="pt" format="dddd">{today}</Moment>
+                        <div className="hoje-semana">{weekday}</div>
                         <Moment className="hoje-mes-ano" element="div" locale="pt" format="MMM YYYY">{today}</Moment>
                     </div>
                     <Moment className="hoje-dia" element="div" locale="pt" format="DD">{today}</Moment>

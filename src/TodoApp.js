@@ -24,6 +24,7 @@ export class TodoApp extends React.Component {
   }
 
   componentDidMount() {
+    var me = this;
     axios
       .get('data.json')
       .then(res => {
@@ -35,19 +36,18 @@ export class TodoApp extends React.Component {
           }
         });
 
-        this.setState({ todoItems: res.data, todoCount: c });
+        me.setState({ todoItems: res.data, todoCount: c });
 
       })
       .catch(err => console.log(err))
   }
 
   addItem(todoItem) {
-    let todoItems = this.getState()['todoItems'];
+    let todoItems = this.state.todoItems;
 
     todoItems.unshift({
-      index: todoItems.length + 1,
-      value: todoItem.newItemValue,
-      done: false
+      text: todoItem.newItemValue,
+      status : 'todo'
     });
     this.setState({ todoItems: todoItems });
   }
@@ -75,9 +75,8 @@ export class TodoApp extends React.Component {
 
     const items = this.state.todoItems;
 
-
     return (
-      <div id="TodoApp" className="main">
+      <div className="main">
         <TodoHeader />
 
         <main className="body" >
