@@ -37,26 +37,27 @@ Foi sugerido que se siga o seguinte `layout`:
 - Utilizo Ubuntu 17;
 - Foi criada uma estrutura componentizada demonstrando como seria organizado um projeto cujo os componentes seriam passíveis de reaproveitamento;
 
-- Utilizou-se `css` simples devido ao grande número de possibilidades existentes tais como scss, sass 
+- Utilizou-se `css` por ser mais simples, sabendo a possibilidade de outros pré processadores tais como scss, sass e styl.
 
 - Apesar de saber da existência das [respostas de concorrentes ](https://github.com/globoesporte/desafio-globoesporte/pulls) me ative a desenvolver a solução da maneira. O única exceção foi obter o [SVG da logo ](https://github.com/globoesporte/desafio-globoesporte/pull/3/files#diff-b8e567eb97ee515bcba54d4868ae77e6) contida no pull request do concorrente/futuro colega  [Rodolfo Mói de Oliveira](https://github.com/rodmoioliveira). Mas dando os créditos merecidos aqui a ele.
 
 - Foram "esprestados" da web algumas soluções tais como :
     - [Todo list](https://codepen.io/marekdano/pen/bVNYpq);
     - [Pure css toggle button](https://codepen.io/mallendeo/pen/eLIiG);
-    - [SVG Toggle check](https://react.rocks/example/SVG_toggle_check).
+    - [SVG Toggle check](https://react.rocks/example/SVG_toggle_check);
+    - [In line editor](https://github.com/bfischer/react-inline-editing).
 
-    Faz parte da cultura da equipe reutilizar fontes open source disponíveis e quis demonstrar a capacidade de fazê-lo.
+    Faz parte da cultura da equipe do globoesporte.com reutilizar fontes open source disponíveis e abusei desse recuso ;) .
 - Foi feita um prototipação inicial :
     - Construção básica do layout com form;
     - Refatoração em componentes do render e do css;
 
-- Uma vez o layout pronto, foi utilizado TDD para a abordagem final das *features* solicitadas no desafio.
+- Uma vez o layout pronto, foi utilizado TDD para a abordagem final das *features* solicitadas no desafio. Foram feitos apenas os casos mais simples mas as possibilidades com Jest e Enzyme são imensas.
 
 ## Sobre mim e o desafio
 
 - Trabalho com front-end há muito tempo. Já desenvolvi frameworks como Sencha ExtJS, GWT, JSF e Angular 5. 
-- Graças ao desfio aprendi mais um: React :) .
+- Graças ao desafio aprendi mais um: React :) .
 - Tenho uma enorme atração por aprender o *hype*.
 - Vejo com bons olhos o trabalho que a equipe do [globosporte.com]() e a [globo.com]() vem fazendo , na fronteira de novas tecnologias tanto de front-end como back-end e *DevOps*.
 
@@ -80,3 +81,6 @@ Foi sugerido que se siga o seguinte `layout`:
 Para executar os testes unitários automatizados execute o comando:
 
 `npm test`
+
+
+Obrigado e espero que tenham gostado !
