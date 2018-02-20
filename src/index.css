@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  padding: 0;
+  /*font-family: opensans,opensans-bastian,Arial,sans-serif;*/
+  font-family:  'Open Sans', sans-serif ;
+  background-color: #EBEBEB;
+  color: #40414D;
+}
+.Header {
+	text-align: center;
+	background-color: #328A00;
+	height: 84px;
+	font-size: 40px;
+  	color:#4CC706;
+}
+.Header_title{
+	line-height: 84px;
+}
+.Header-logo {
+  height: 80px;
+}
+
+.Header-Header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.Header-intro {
+  font-size: large;
+}
+.Header_calendar{
+	float:right;
+    width: 152px;
+    padding-left: 23px;
+	background-color: #2D7603;
+	color:#46AB07;
+	max-height: 100%;
+    text-align: left;
+    position:  absolute;
+    right:  0px;
+    top: 0px;
+    height: 84px;
+}
+.Header_day{
+    margin-right: 4px;
+    font-size: 45px;
+    float: left;
+    width: 51px;
+    text-align: right;
+    height: 84px;
+    line-height: 84px;
+
+}
+.Header_weekDay{
+	font-size: 20px;
+	float:left;
+    width: 81px;
+    padding-top: 18px;
+    height: 25px;
+}
+.Header_month{
+	font-size: 14px;
+	float:left;
+    width: 25px;
+	height: 42px;
+}
+.Header_year{
+	font-size: 14px;
+	float:left;
+    width: 34px;
+	height: 42px;
+}
+
+.Content_container{
+	width: 500px;
+	margin: auto;
+    padding-top: 52px;
+}
+.Content_input{
+    background-color: transparent;
+    border: solid 0px;
+    width: 100%;
+    height: 50px;
+    font-size: 22px;
+    padding: 0px 5px 0px 5px;
+    color:#696972;
+}
+.Content_line{
+    width:  100%;
+    height: 1px;
+    background: #d4d4d4;
+}
+.Content_container ul{
+	background-color: #fff;
+
+}
+.Tasks_container{
+	background-color: #fff;
+	margin:auto;
+    margin-top: 27px;
+	transition: 0.2s;
+	min-height: 275px;
+    width: 395px;
+}
+.Tasks_container.footer{
+	background-color: transparent;
+	color:#379100;
+	margin-top: 10px;
+	min-height: 25px;
+	font-size: 13px;
+}
+.Tasks_task{
+    height: 55px;
+	cursor: pointer;
+	transition: 0.4s;
+	line-height: 35px;
+  	text-align: center;
+}
+.Tasks_task:hover .Task_btn_delete img{
+	transition: 0.4s;
+	display:block; 
+}
+.Tasks_task:hover{
+	background-color: #ededed !important;
+}
+.Task_text_btn{
+    padding: 10px 0px 10px 44px;
+    height: 35px;
+    float: left;
+    width: 308px;
+}
+.Tasks_task_btn{
+	float:right;
+}
+.Task_btn_todo{
+	border:solid 7px #DDE0E7; /*dde0e7*/
+	border-radius: 30px;
+	width: 18px;
+	height: 18px;
+	background-color: #fff;
+	transition: 0.2s;
+	float: right;
+    margin-top: 2px;
+}
+.Task_btn_done{
+	width: 13px;
+	height: 6px;
+	border: solid 5px #379100;
+	border-top: 0px;
+	border-right: 0px;
+	margin: 10px 5px 0px 5px;
+	animation: Task_btn_done infinite 1s linear;
+	transition: 0.2s;
+    float: right;
+}
+.Task_text{
+	float: left;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    width: 274px;
+    text-align: left;
+	border: solid 0px;
+	background-color: transparent;
+	font-size: 17px;
+    height: 100%;
+}
+.Task_text.done{
+	color: #BEC0CB;
+}
+.Task_text.todo{
+	color:#3F414D;
+}
+.Task_btn_delete{
+    width: 35px;
+    height: 35px;
+    padding-top: 18px;
+    padding-left: 8px;
+	float:right;
+	margin-top: 0px;
+	margin-left: 0px;
+}
+.Task_btn_delete img{
+	transition: 0.4s;
+	display: none;
+	width: 17px;
+}
+@keyframes Task_btn_done {
+  from { transform: rotate(315deg); }
+  to { transform: rotate(315deg); }
+}
+
+
+.Tasks_display_selected{
+	background-color: #318D02;
+	color:#fff;
+}
+.Task_display{
+	background-color: transparent;
+	border: solid 1px transparent;
+	border-radius: 3px;
+	cursor: pointer;
+	float: right;
+	width: 50px;
+	height: 20px;
+	margin-left:3px;
+	line-height: 20px;
+	text-align: center;
+}
+.Task_display.active{
+	background-color: #379100;
+	color:#fff;
+	border: solid 1px #379100;
+	border-radius: 3px;
+}
+.Task_missin{
+	float: left;
+	width: 100px;
+	height: 25px;
+	line-height: 23px;
+}
+
+@media (max-width: 530px) {
+	.Content_container ,.Tasks_container{
+	    width: 98% !important;
+	}
+	.Task_text_btn{
+		padding-left: 3px;
+		width: 89%;
+	}
+	.Task_btn_delete{
+		width: 17px;
+		padding-right: 5px;
+	}
+	.Task_missin{
+		width: 175px;
+	}
+}

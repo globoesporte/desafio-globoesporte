@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Ir pra praia",
+    "status": "done"
+  },
+  {
+    "text": "Fazer exercício",
+    "status": "done"
+  },
+  {
+    "text": "Estudar React",
+    "status": "done"
+  },
+  {
+    "text": "Assistir série",
+    "status": "todo"
+  },
+  {
+    "text": "Ler",
+    "status": "todo"
+  }
+]
