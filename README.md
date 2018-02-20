@@ -1,11 +1,12 @@
 # Resposta ao Desafio Globoesporte
 
 
-Meu nome é Ricardo Girardi Sixel e essa é minha resposta ao [Desafio Globo Esporte](https://github.com/globoesporte/desafio-globoesporte.).
+Meu nome é Ricardo Girardi Sixel. Meus contatos são pelo email rsixel@gmail.com e [Facebook](https://www.facebook.com/rsixel).
 
 
+Essa é minha resposta ao [Desafio Globo Esporte](https://github.com/globoesporte/desafio-globoesporte.) e também pode ser encontrada [aqui no meu Github](https://github.com/rsixel/desafio-globoesporte).
 
-Essa resposta também pode ser encontrada [aqui no meu Github](https://github.com/rsixel/desafio-globoesporte)
+
 
 Basicamente a tarefa consiste em desenvolver uma aplicação de tarefas (todo list) utilizando React.
 

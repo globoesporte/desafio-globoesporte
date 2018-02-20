@@ -1,7 +1,19 @@
 .todotitle {
+  margin-left: 3em;
+  margin-top: 1em;
+  text-align: left;
+  display : block;
+}
+
+
+.todoedit {
   padding-left: 3em;
   padding-top: 1em;
   text-align: left;
+  color: #43464f;
+  outline: none;
+  background-color: transparent;
+  font-weight: 600;
 }
 
 
