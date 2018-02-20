@@ -1,0 +1,70 @@
+.todotitle {
+  margin-left: 3em;
+  margin-top: 1em;
+  text-align: left;
+  display : block;
+}
+
+
+.todoedit {
+  padding-left: 3em;
+  padding-top: 1em;
+  text-align: left;
+  color: #43464f;
+  outline: none;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+
+.todoitem{
+  display: grid;
+  grid-template-columns: 270px 50px 40px;
+  height: 68px;
+}
+
+.todoitem:hover .tododelete {
+  display: block;
+}
+
+
+.todo {
+  background-color: #ffffff;
+  color: #43464f;
+  font-weight: 600;
+}
+
+.todo:hover {
+  background-color: #ededed;
+}
+
+.tododelete {
+  display: none;
+  float : none;
+  
+}
+
+.close {
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .62;
+  color: red;
+  padding-top: 15px;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+
+}
+
+.done {
+  background-color: #ffffff;
+  color: #d2d2d2;
+  font-weight: 600;
+}
+
+.done:hover {
+  background-color: #ededed;
+}

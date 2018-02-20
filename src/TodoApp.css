@@ -1,0 +1,52 @@
+.main {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  background-color: #ebebeb;
+  width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: large;
+}
+
+.header-container {
+  width: 100%;
+}
+
+.header {
+  background-color: #328b00;
+  height: 80px;
+  color: #2d7502;
+  align-items: center;
+  overflow: hidden;
+}
+
+.logo {
+  height: 45px;
+  margin: 0 auto;
+  display: block;
+  padding: 17.5px;
+}
+
+.title {
+  color: #328b00;
+}
+
+.filtro {
+  display: block;
+  float: right;
+}
+
+.footer {
+  width : 360px;
+  margin:auto;
+  display: grid;
+  grid-template-columns: auto 175px;
+}
+
+.footertabs{
+   margin-top : 15px;
+}
+
+.footersummary{
+  margin-top : 12px;
+}

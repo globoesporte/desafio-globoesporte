@@ -1,0 +1,17 @@
+.todolist {
+    width: 60%;
+    margin: auto;
+}
+
+.todolist ul {
+    display: inline;
+    float: none;
+}
+
+.todolistgroup {
+    list-style: none;
+}
+
+.todolistgroup>.todoitem:hover {
+    background-color: #ededed;
+}

@@ -1,57 +1,86 @@
-# Desafio Globoesporte
+# Resposta ao Desafio Globoesporte
 
-Desenvolva uma aplicação de tarefas (todo list) utilizando React.
 
-Crie um fork desse projeto, e quando concluído crie um pull request do seu fork para esse repositório.
+Meu nome é Ricardo Girardi Sixel. Meus contatos são pelo email rsixel@gmail.com e [Facebook](https://www.facebook.com/rsixel).
+
+
+Essa é minha resposta ao [Desafio Globo Esporte](https://github.com/globoesporte/desafio-globoesporte.) e também pode ser encontrada [aqui no meu Github](https://github.com/rsixel/desafio-globoesporte).
+
+
+
+Basicamente a tarefa consiste em desenvolver uma aplicação de tarefas (todo list) utilizando React.
+
+## Breve descrição do problema
+
+- Criar um fork do projeto [Desafio Globo Esporte](https://github.com/globoesporte/desafio-globoesporte.), e quando concluído criar um pull request do fork para esse repositório.
+
+- Devem ser desenolvidas as seguintes features,  onde o usuário pode:
+
+    - Inserir tarefas
+    - Remover tarefas
+    - Editar o texto das tarefas
+    - Filtrar os items de acordo com o estado (Todos, Feitos, A fazer)
+    - Marcar uma tarefa como feita (done) ou não feita
 
 ---
 
-## Features
+## Layout sugerido
 
-O usuário deve poder:
-
-- Inserir tarefas
-- Remover tarefas
-- Editar o texto das tarefas
-- Filtrar os items de acordo com o estado (Todos, Feitos, A fazer)
-- Marcar uma tarefa como feita (done) ou não feita
-
----
-
-## Layout
-
-De preferência seguir o layout abaixo para a criação da aplicação, o PSD se encontra dentro da pasta `layout`:
+Foi sugerido que se siga o seguinte `layout`:
 
 ![layout](./layout/layout.jpg)
 
+
+## Abordagem da solução
+
+- Utilizei o Visual Studio Code , a.k.a., VS Code para desenvolver todo o projeto. Open source, funciona nas plataformas Linux, Mac e Windows e tem vários plugins com suporte a HTML5, css, React etc.;
+- Utilizo Ubuntu 17;
+- Foi criada uma estrutura componentizada demonstrando como seria organizado um projeto cujo os componentes seriam passíveis de reaproveitamento;
+
+- Utilizou-se `css` por ser mais simples, sabendo a possibilidade de outros pré processadores tais como scss, sass e styl.
+
+- Apesar de saber da existência das [respostas de concorrentes ](https://github.com/globoesporte/desafio-globoesporte/pulls) me ative a desenvolver a solução da maneira. O única exceção foi obter o [SVG da logo ](https://github.com/globoesporte/desafio-globoesporte/pull/3/files#diff-b8e567eb97ee515bcba54d4868ae77e6) contida no pull request do concorrente/futuro colega  [Rodolfo Mói de Oliveira](https://github.com/rodmoioliveira). Mas dando os créditos merecidos aqui a ele.
+
+- Foram "esprestados" da web algumas soluções tais como :
+    - [Todo list](https://codepen.io/marekdano/pen/bVNYpq);
+    - [Pure css toggle button](https://codepen.io/mallendeo/pen/eLIiG);
+    - [SVG Toggle check](https://react.rocks/example/SVG_toggle_check);
+    - [In line editor](https://github.com/bfischer/react-inline-editing).
+
+    Faz parte da cultura da equipe do globoesporte.com reutilizar fontes open source disponíveis e abusei desse recuso ;) .
+- Foi feita um prototipação inicial :
+    - Construção básica do layout com form;
+    - Refatoração em componentes do render e do css;
+
+- Uma vez o layout pronto, foi utilizado TDD para a abordagem final das *features* solicitadas no desafio. Foram feitos apenas os casos mais simples mas as possibilidades com Jest e Enzyme são imensas.
+
+## Sobre mim e o desafio
+
+- Trabalho com front-end há muito tempo. Já desenvolvi frameworks como Sencha ExtJS, GWT, JSF e Angular 5. 
+- Graças ao desafio aprendi mais um: React :) .
+- Tenho uma enorme atração por aprender o *hype*.
+- Vejo com bons olhos o trabalho que a equipe do [globosporte.com]() e a [globo.com]() vem fazendo , na fronteira de novas tecnologias tanto de front-end como back-end e *DevOps*.
+
 ---
 
-## Dados
 
-Na pasta `api/data.json` existe um array de items, que é o estado inicial que a aplicação deve ter.
+## Instruções de execução e teste
 
-A partir do estado inicial, as ações de adicionar, remover e editar items devem se dar localmente no JS sem persistir estado.
-
-Cada item da lista só pode ter dois status, `done` ou `todo`.
-
-Para esse desafio não é necessário guardar as modificações que o usuário vai fazer na aplicação.
-
----
-
-## Comandos que o projeto deve ter
-
-Dependências do projeto devem ser instaladas com:
+- Para preparar as dependências do projeto, tenha o npm instalado e execute na pasta do projeto o comando:
 
 `npm install`
 
-A aplicação deve ser executada com:
+- Para executar a aplicação
 
 `npm start`
 
 ---
 
-*Bônus:*
+### Foi solicitado um Bônus:*
 
-Testes unitários automatizados devem ser executados com:
+Para executar os testes unitários automatizados execute o comando:
 
 `npm test`
+
+
+Obrigado e espero que tenham gostado !

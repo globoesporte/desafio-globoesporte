@@ -1,12 +1,33 @@
 {
-  "name": "challenge-todo",
-  "version": "1.0.0",
-  "description": "",
+  "name": "desafio-globoesporte",
+  "version": "0.1.0",
+  "private": true,
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "axios": "^0.17.1",
+    "axios-mock-adapter": "^1.13.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-enzyme": "^4.2.0",
+    "moment": "^2.20.1",
+    "react": "^16.2.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.2.0",
+    "react-inline-editing": "^1.0.10",
+    "react-moment": "^0.7.0",
+    "react-motion": "^0.5.2",
+    "react-scripts": "1.1.1",
+    "react-test-renderer": "^16.2.0",
+    "sinon": "^4.3.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
+    "keywords": "globoesporte,globo.com,reactjs,desafio",
+    "author": "Ricardo Sixel",
+    "license": "ISC"
+  }
 }
