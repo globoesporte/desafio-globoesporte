@@ -19,8 +19,20 @@ export class TodoApp extends React.Component {
     super(props);
     this.addItem = this.addItem.bind(this);
     this.removeItem = this.removeItem.bind(this);
-    this.markTodoDone = this.markTodoDone.bind(this);
-    this.state = { todoItems: [], todoCount: 0 };
+    this.onToggle = this.onToggle.bind(this);
+    this.onSelectFiltro = this.onSelectFiltro.bind(this);
+    this.state = { todoItems: [], todoCount: 0, filtro : 'Todos' };
+  }
+
+  countTodo(todoList){
+    var c = 0;
+    todoList.forEach(x => {
+      if (x.status === "todo") {
+        c++;
+      }
+    });
+  
+    return c;
   }
 
   componentDidMount() {
@@ -29,14 +41,9 @@ export class TodoApp extends React.Component {
       .get('data.json')
       .then(res => {
 
-        var c = 0;
-        res.data.forEach(x => {
-          if (x.status === "todo") {
-            c++;
-          }
-        });
+        res.data.forEach((item,index)=>{item['index']=index});
 
-        me.setState({ todoItems: res.data, todoCount: c });
+        me.setState({ todoItems: res.data, todoCount: this.countTodo(res.data) });
 
       })
       .catch(err => console.log(err))
@@ -49,22 +56,35 @@ export class TodoApp extends React.Component {
       text: todoItem.newItemValue,
       status : 'todo'
     });
-    this.setState({ todoItems: todoItems });
-  }
-  removeItem(itemIndex) {
-    let todoItems = this.getState()['todoItems'];
 
-    todoItems.splice(itemIndex, 1);
-    this.setState({ todoItems: todoItems });
+    todoItems.forEach((item,index)=>{item['index']=index});
+
+    this.setState({ todoItems: todoItems, todoCount: this.countTodo(todoItems) });
   }
-  markTodoDone(itemIndex) {
-    let todoItems = this.getState()['todoItems'];
-    var todo = todoItems[itemIndex];
-    todoItems.splice(itemIndex, 1);
-    todo.done = !todo.done;
-    todo.done ? todoItems.push(todo) : todoItems.unshift(todo);
-    this.setState({ todoItems: todoItems });
+  
+  removeItem(index) {
+    let todoItems = this.state.todoItems;
+
+    todoItems.splice(index, 1);
+    
+    todoItems.forEach((item,index)=>{item['index']=index});
+    this.setState({ todoItems: todoItems, todoCount: this.countTodo(todoItems) });
   }
+
+  onToggle(index) {
+    let todoItems = this.state.todoItems;
+
+    var todo = todoItems[index];
+    todo.status = todo.status ==='todo'?'done':'todo';
+    this.setState({ todoItems: todoItems, todoCount: this.countTodo(todoItems)});
+  }
+
+  onSelectFiltro(text){
+
+    this.setState({filtro:text});
+    
+  }
+
   render() {
     const tabs = [
       { text: 'Todos' },
@@ -73,7 +93,20 @@ export class TodoApp extends React.Component {
 
     ];
 
-    const items = this.state.todoItems;
+    const items = [];
+
+    this.state.todoItems.forEach((item,index)=>{
+          switch(this.state.filtro ){
+            case 'A fazer' :
+            if(item.status==='todo')items.push(item);
+              break;
+            case 'Feitos' :
+              if(item.status==='done')items.push(item);
+              break;
+            default:
+              items.push(item);
+          } 
+    });
 
     return (
       <div className="main">
@@ -83,14 +116,14 @@ export class TodoApp extends React.Component {
           <TodoForm addItem={this.addItem} />
 
           <div className="todolist">
-            <TodoList items={items} removeItem={this.removeItem} markTodoDone={this.markTodoDone} />
+            <TodoList items={items} removeItem={this.removeItem} onToggle={this.onToggle} />
           </div>
           <div className="footer" >
             <div className="footersummary">
               <TodoSummary total={this.state.todoCount} />
             </div>
             <div className="footertabs">
-              <TodoSelectTab selected="Todos" name="filtro" items={tabs} />
+              <TodoSelectTab selected={this.state.filtro} name="filtro" items={tabs} onClick={this.onSelectFiltro.bind(this)}/>
             </div>
           </div>
         </main>

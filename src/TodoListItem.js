@@ -4,40 +4,36 @@ import { ToggleButton } from './ToggleButton';
 import './TodoListItem.css';
 
 export class TodoListItem extends React.Component {
+
     constructor(props) {
         super(props);
         this.onClickClose = this.onClickClose.bind(this);
-        this.onClickDone = this.onClickDone.bind(this);
-        this.state = {
-            status: this.props.item.status
-        };
+        this.onToggle = this.onToggle.bind(this);
     }
+    
     onClickClose() {
         var index = parseInt(this.props.index, 0);
         this.props.removeItem(index);
     }
-    onClickDone() {
-        var index = parseInt(this.props.index, 0);
-        this.props.markTodoDone(index);
-    }
-    handleToggle() {
-        this.setState({ status: this.state.status==="todo"?"done":"todo"})
-    }
-    render() {
-        var todoClass = this.state.status;
 
+    onToggle() {
+        var index = parseInt(this.props.index, 0);
+        this.props.onToggle(index);
+   }
+
+    render() {
         const style = {
             display: 'block',
-            marginTop : '10px'
+            marginTop: '10px'
         }
 
         return (
             <li >
-                <div className={todoClass+' todoitem'}>
+                <div className={this.props.item.status + ' todoitem'}>
                     <span className="todotitle" >{this.props.item.text}</span>
 
-                    <div style={style} onClick={this.handleToggle.bind(this)}>
-                        <ToggleButton status={this.state.status} />
+                    <div style={style} onClick={this.onToggle.bind(this)}>
+                        <ToggleButton status={this.props.item.status} />
                     </div>
 
                     <div className="tododelete">

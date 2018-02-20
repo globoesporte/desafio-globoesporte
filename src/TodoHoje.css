@@ -18,11 +18,13 @@
   background-color: transparent;
   padding: 0px;
   font-size: 50px;
+  margin-right: 10px;
   font-weight: 600;
   overflow: hidden;
   top: 5px;
   left: 15px;
   position: relative;
+  float : right;
 }
 
 .hoje-sem-mes-ano {
@@ -34,6 +36,7 @@
   position: relative;
   float: right;
   top: 5px;
+  margin-right:10px;
 }
 
 .hoje-semana {
