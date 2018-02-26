@@ -49,7 +49,7 @@
   "emmet.showExpandedAbbreviation": "always",
   "emmet.showAbbreviationSuggestions": true,
   "emmet.triggerExpansionOnTab": true,
-  "window.zoomLevel": -1,
+"window.zoomLevel": 0,
   "languageStylus.useSeparator": false,
   "explorer.confirmDelete": true
 }
